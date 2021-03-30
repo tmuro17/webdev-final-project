@@ -19,10 +19,13 @@ defmodule BackendWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", BackendWeb do
-  #   pipe_through :api
-  # end
+#   Other scopes may use custom stacks.
+   scope "/api/v1", BackendWeb do
+     pipe_through :api
+
+     resources "/users", UserController, except: [:new, :edit]
+     resources "/session", SessionController, only: [:create]
+  end
 
   # Enables LiveDashboard only for development
   #
