@@ -5,7 +5,7 @@ import { api_login } from '../api'
 const ErrorMessage = ({msg}) => {
   if (msg !== "") {
     return (
-      <p class="text-yellow text-xs italic">{msg}</p>
+      <p className="text-yellow text-xs italic">{msg}</p>
     )
   } else {
     return null;

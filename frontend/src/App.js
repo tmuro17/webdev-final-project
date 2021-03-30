@@ -2,7 +2,7 @@ import {Route, Switch} from "react-router-dom";
 
 import Nav from "./Nav";
 import UserList from "./Users/List"; // do we need listing users?
-import UserNew from "./Users/New";
+import Register from "./Users/Register";
 import Login from './Users/Login';
 
 
@@ -22,7 +22,7 @@ const App = () => {
         </Route>
         <Route path="/register" exact>
           {/* // im going to standardize this new component to look like the login page next */}
-          <UserNew/>
+          <Register/>
         </Route>
         <Route path="/users/list">
           <UserList/> 
