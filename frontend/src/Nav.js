@@ -1,99 +1,75 @@
-import {Alert, Button, Nav, Form, Row, Col} from "react-bootstrap";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+// I will implement faIcons for the navbar in the future
 import {connect} from "react-redux";
-import {useState} from "react";
-import {api_login} from "./api";
 
 
-const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+// ill move this functionality to the profile page, leaving it in a comment for ez copying
+// let SessionInfo = connect()(({session, dispatch}) => {
+//   const logout = () => {
+//     dispatch({type: 'session/clear'});
+//   };
+//   return (
+//     <p>
+//       Logged in as {session.email} &nbsp;
+//       <Button onClick={logout}>Logout</Button>
+//     </p>
+//   );
+// });
 
-  const on_submit = ev => {
-    ev.preventDefault();
-    api_login(email, pass);
-  };
-
-  return (
-    <Form onSubmit={on_submit} inline>
-      <Form.Control name="email"
-                    type="text"
-                    placeholder="Email"
-                    onChange={(ev) => setEmail(ev.target.value)}
-                    value={email}/>
-      <Form.Control name="password"
-                    type="password"
-                    placeholder="Password"
-                    onChange={(ev) => setPass(ev.target.value)}
-                    value={pass}/>
-      <Button variant="primary" type="submit">
-        Login
-      </Button>
-    </Form>
-  );
-};
-
-let SessionInfo = connect()(({session, dispatch}) => {
+const LoginLogoutLink = connect()(({session, dispatch}) => {
   const logout = () => {
     dispatch({type: 'session/clear'});
   };
-  return (
-    <p>
-      Logged in as {session.email} &nbsp;
-      <Button onClick={logout}>Logout</Button>
-    </p>
-  );
-});
 
-const Link = ({to, children}) => {
-  return (
-    <Nav.Item>
-      <NavLink to={to} exact className="nav-link" activeClassName="active">
-        {children}
-      </NavLink>
-    </Nav.Item>
-  );
-};
-
-const LoginHeader = ({session}) => {
-  console.log(session)
   if (session) {
-    return <SessionInfo session={session}/>;
+    return (
+      <a onClick={logout} className="px-3 py-2 flex items-center leading-snug">
+        Logout
+      </a>
+    )
   } else {
-    return <LoginForm/>;
+    return (
+    <a href="/login" className="px-3 py-2 flex items-center leading-snug">
+      Login
+    </a>
+    )
   }
-};
+})
 
-const LoginHeaderBar = connect(({session}) => ({session}))(LoginHeader);
-
-const AppNav = ({error}) => {
-  let error_row = null;
-
-  if (error) {
-    error_row = (
-      <Row>
-        <Col>
-          <Alert variant="danger">{error}</Alert>
-        </Col>
-      </Row>
-    );
-  }
-
+const AppNav = ({session}) => {
   return (
-    <div>
-      <Row>
-        <Col>
-          <Nav variant="pills">
-            <Link to="/">Users</Link>
-          </Nav>
-        </Col>
-        <Col>
-          <LoginHeaderBar/>
-        </Col>
-      </Row>
-      {error_row}
+    <div className="flex flex-wrap pb-2">
+      <div className="w-full">
+        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-darkgray rounded-b">
+          <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+            <div className="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
+              <a href="/" className="text-md font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white">
+                Short Final
+              </a>
+            </div>
+            <div className="flex lg:flex-grow items-center" id="example-navbar-info">
+              <ul className="flex flex-col lg:flex-row list-none ml-auto text-sm uppercase font-bold text-white">
+                <li className="nav-item hover:bg-orange rounded">
+                  <a href="/play" className="px-3 py-2 flex items-center leading-snug">
+                    Play
+                  </a>
+                </li>
+                <li className="nav-item hover:bg-orange rounded">
+                  <a href="/profile" className="px-3 py-2 flex items-center leading-snug" href="/profile">
+                    Profile
+                  </a>
+                </li>
+                <li className="nav-item hover:bg-orange rounded">
+                  <LoginLogoutLink session={session}/>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
     </div>
-  );
-};
+  )};
 
-export default connect(({error}) => ({error}))(AppNav);
+export default connect(({session}) => ({session}))(AppNav);

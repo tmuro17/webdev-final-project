@@ -30,21 +30,27 @@ export const fetch_users = () => {
 };
 
 export const api_login = (email, password) => {
-  api_post("/session", {email, password}).then((data) => {
-    if (data.session) {
-      let action = {
-        type: "session/set",
-        data: data.session,
-      };
-      store.dispatch(action);
-    } else if (data.error) {
-      let action = {
-        type: "error/set",
-        data: data.error,
-      };
-      store.dispatch(action);
-    }
-  });
+  return new Promise((resolve, reject) => {
+    api_post("/session", {email, password}).then((data) => {
+      if (data.session) {
+        let action = {
+          type: "session/set",
+          data: data.session,
+        };
+        console.log('setting session')
+        store.dispatch(action);
+        resolve('SUCCESS')
+      } else if (data.error) {
+        let action = {
+          type: "error/set",
+          data: data.error,
+        };
+        store.dispatch(action);
+        // handle this better in the future
+        reject(data.error);
+      }
+    });
+  })
 };
 
 export const load_defaults = () => {

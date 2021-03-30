@@ -1,25 +1,35 @@
 import {Route, Switch} from "react-router-dom";
 
-import "./App.scss";
-import {Container} from "react-bootstrap";
 import Nav from "./Nav";
-import UserList from "./Users/List";
+import UserList from "./Users/List"; // do we need listing users?
 import UserNew from "./Users/New";
+import Login from './Users/Login';
 
 
 const App = () => {
   return (
-    <Container>
+    <div id="app" className="container mx-auto px-4 font-varela">
       <Nav/>
       <Switch>
         <Route path="/" exact>
-          <UserList/>
+          <div>home</div>
         </Route>
-        <Route path="/users/new" exact>
+        <Route path="/play" exact>
+          <div>play</div>
+        </Route>
+        <Route path="/login" exact>
+          <Login/>
+        </Route>
+        <Route path="/register" exact>
+          {/* // im going to standardize this new component to look like the login page next */}
           <UserNew/>
         </Route>
+        <Route path="/users/list">
+          <UserList/> 
+          {/* // for debugging */}
+        </Route>
       </Switch>
-    </Container>
+    </div>
   )
 }
 
