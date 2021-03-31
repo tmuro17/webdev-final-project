@@ -7,11 +7,11 @@
 # General application configuration
 use Mix.Config
 
-config :backend,
+config :backend_final,
   ecto_repos: [Backend.Repo]
 
 # Configures the endpoint
-config :backend, BackendWeb.Endpoint,
+config :backend_final, BackendWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "VJfKlRP1VffPGOjURDvfqKV3AAzdngJQ35bp/MKhjrSRiGENk/VRUnyqKIqND1fW",
   render_errors: [view: BackendWeb.ErrorView, accepts: ~w(html json), layout: false],

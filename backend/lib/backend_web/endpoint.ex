@@ -1,5 +1,5 @@
 defmodule BackendWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :backend
+  use Phoenix.Endpoint, otp_app: :backend_final
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -22,7 +22,7 @@ defmodule BackendWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :backend,
+    from: :backend_final,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -32,7 +32,7 @@ defmodule BackendWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :backend
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :backend_final
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

@@ -5,8 +5,8 @@ export PORT=4850
 
 echo "Stopping old copy..."
 
-/home/final/webdev_final_project/backend/_build/prod/rel/backend/bin/backend stop || true
+/home/final/webdev_final_project/backend/_build/prod/rel/backend_final/bin/backend_final stop || true
 
 echo "Starting app..."
 
-/home/final/webdev_final_project/backend/_build/prod/rel/backend/bin/backend start
+/home/final/webdev_final_project/backend/_build/prod/rel/backend_final/bin/backend_final start
