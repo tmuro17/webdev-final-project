@@ -1,10 +1,15 @@
 defmodule Backend.ApiAgent do
   use Agent
 
+  #  token format
+  # {
+  #   token: api_token
+  #   expiry: time of expiry
+  # }
+
   def start_link(_args) do
     Agent.start_link(fn -> %{} end, name: __MODULE__)
   end
-
 
   def get_token_info() do
     Agent.get __MODULE__, fn token -> token end
@@ -51,5 +56,45 @@ defmodule Backend.ApiAgent do
 
       put_token_info %{token: new_token, expiry: new_expire}
     end
+  end
+
+
+  # Coordinates = {latitude, longitude}
+  # Search Radius in kilometers
+  # Expected to have called refresh_token
+  # before calling this function
+  def get_airports_in_radius(coordinates, search_radius) do
+    token = get_token_info()[:token]
+    api_details = api_info()
+
+    {lat, long} = coordinates
+    params = [
+      {"latitude", lat},
+      {"longitude", long},
+      {"radius", search_radius},
+      {"sort", "distance"},
+    ]
+
+    headers = [{"Authorization", "Bearer #{token}"}]
+
+    # https://developers.amadeus.com/self-service/category/air/api-doc/airport-nearest-relevant/api-reference
+    {_, resp} = HTTPoison.get "#{info[:BASE_URL]}#{info[:API_ENDPOINT]}", headers, [{:params, params}]
+    {_, data} = Jason.decode(resp.body)
+
+    results = data["data"]
+
+    airport_details = Enum.filter(results, fn airport -> airport["address"]["countryCode"] == "US" end)
+                      |> Enum.map(
+                           fn airport ->
+                             %{
+                               name: airport["name"],
+                               icao: "K#{airport["iataCode"]}",
+                               distance: "#{airport["distance"]["value"]} #{airport["distance"]["unit"]}",
+                               coordinates: {airport["geoCode"]["latitude"], airport["geoCode"]["longitude"]},
+                             }
+                           end
+                         )
+
+    airport_details
   end
 end
