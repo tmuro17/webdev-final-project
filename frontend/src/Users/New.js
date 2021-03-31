@@ -1,5 +1,5 @@
 import {Button, Form} from 'react-bootstrap';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import pick from 'lodash/pick';
