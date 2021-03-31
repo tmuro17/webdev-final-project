@@ -57,13 +57,20 @@ const AppNav = ({session}) => {
                   </a>
                 </li>
                 <li className="nav-item hover:bg-orange rounded">
-                  <a href="/profile" className="px-3 py-2 flex items-center leading-snug" href="/profile">
+                  <a href="/profile" className="px-3 py-2 flex items-center leading-snug">
                     Profile
                   </a>
                 </li>
                 <li className="nav-item hover:bg-orange rounded">
                   <LoginLogoutLink session={session}/>
                 </li>
+                {!session &&
+                  <li className="nav-item hover:bg-orange rounded">
+                    <a href="/register" className="px-3 py-2 flex items-center leading-snug">
+                      Register
+                    </a>
+                  </li>
+                }
               </ul>
             </div>
           </div>
