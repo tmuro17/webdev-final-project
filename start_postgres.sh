@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker run -d -p 5432:5432 \
- -e POSTGRES_PASSWORD=postgres \
+docker run -d -p 4855:5432 \
+ -e POSTGRES_PASSWORD=final_postgres \
  postgres
