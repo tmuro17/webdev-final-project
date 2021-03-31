@@ -2,7 +2,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    root /home/final/webdev_final_project/frontend/build;
+    root /home/final/webdev_final_project/bak/build;
 
     index index.html;
 
