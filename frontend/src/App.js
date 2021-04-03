@@ -1,5 +1,5 @@
-import {Route, Switch} from "react-router-dom";
-
+import { Route, Switch } from "react-router-dom";
+import PrivateRoute from "./utils/PrivateRoute";
 import Nav from "./Nav";
 import UserList from "./Users/List"; // do we need listing users?
 import Register from "./Users/Register";
@@ -14,9 +14,10 @@ const App = () => {
         <Route path="/" exact>
           <div>home</div>
         </Route>
-        <Route path="/play" exact>
+        {/* private route means you need to be logged in */}
+        <PrivateRoute path="/play" exact>
           <div>play</div>
-        </Route>
+        </PrivateRoute>
         <Route path="/login" exact>
           <Login/>
         </Route>
