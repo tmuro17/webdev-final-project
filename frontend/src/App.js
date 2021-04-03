@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import UserList from "./Users/List"; // do we need listing users?
 import Register from "./Users/Register";
 import Login from './Users/Login';
+import Game from './Game/Game';
 
 
 const App = () => {
@@ -16,7 +17,9 @@ const App = () => {
         </Route>
         {/* private route means you need to be logged in */}
         <PrivateRoute path="/play" exact>
-          <div>play</div>
+          <div>play
+            <Game/>
+          </div>
         </PrivateRoute>
         <Route path="/login" exact>
           <Login/>
