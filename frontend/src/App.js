@@ -21,7 +21,6 @@ const App = () => {
           <Login/>
         </Route>
         <Route path="/register" exact>
-          {/* // im going to standardize this new component to look like the login page next */}
           <Register/>
         </Route>
         <Route path="/users/list">

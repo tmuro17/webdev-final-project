@@ -65,7 +65,7 @@ defmodule Backend.ApiAgent do
   # before calling this function
   def get_airports_in_radius(coordinates, search_radius) do
     token = get_token_info()[:token]
-    api_details = api_info()
+    info = api_info()
 
     {lat, long} = coordinates
     params = [
