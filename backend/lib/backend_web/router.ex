@@ -25,6 +25,8 @@ defmodule BackendWeb.Router do
 
      resources "/users", UserController, except: [:new, :edit]
      resources "/session", SessionController, only: [:create]
+     resources "/airports", AirportController, except: [:new, :edit]
+     resources "/guesses", GuessController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
