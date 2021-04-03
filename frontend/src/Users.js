@@ -1,6 +1,6 @@
-import {Row, Col, Form, Button} from 'react-bootstrap';
+import { Row, Col, Form, Button } from 'react-bootstrap';
 import capitalize from 'lodash/capitalize';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 const Field = ({user, setUser, field}) => {
   const update = ev => {
