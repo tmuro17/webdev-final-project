@@ -64,13 +64,13 @@ defmodule Backend.ApiAgent do
   # Expected to have called refresh_token
   # before calling this function
   def get_airports_in_radius(coordinates, search_radius) do
+    refresh_token()
     token = get_token_info()[:token]
     info = api_info()
 
-    {lat, long} = coordinates
     params = [
-      {"latitude", lat},
-      {"longitude", long},
+      {"latitude", coordinates["latitude"]},
+      {"longitude", coordinates["longitude"]},
       {"radius", search_radius},
       {"sort", "distance"},
     ]
@@ -90,7 +90,10 @@ defmodule Backend.ApiAgent do
                                name: airport["name"],
                                icao: "K#{airport["iataCode"]}",
                                distance: "#{airport["distance"]["value"]} #{airport["distance"]["unit"]}",
-                               coordinates: {airport["geoCode"]["latitude"], airport["geoCode"]["longitude"]},
+                               coordinates: %{
+                                 lat: airport["geoCode"]["latitude"],
+                                 lng: airport["geoCode"]["longitude"]
+                                 },
                              }
                            end
                          )

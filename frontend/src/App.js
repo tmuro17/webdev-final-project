@@ -5,6 +5,7 @@ import UserList from "./Users/List"; // do we need listing users?
 import Register from "./Users/Register";
 import Login from './Users/Login';
 import Game from './Game/Game';
+import { PhoenixSocketProvider } from './utils/PhoenixSocketContext'
 
 
 const App = () => {
@@ -17,9 +18,9 @@ const App = () => {
         </Route>
         {/* private route means you need to be logged in */}
         <PrivateRoute path="/play" exact>
-          <div>play
+          <PhoenixSocketProvider>
             <Game/>
-          </div>
+          </PhoenixSocketProvider>
         </PrivateRoute>
         <Route path="/login" exact>
           <Login/>
