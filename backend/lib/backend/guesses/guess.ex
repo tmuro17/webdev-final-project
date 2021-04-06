@@ -12,7 +12,7 @@ defmodule Backend.Guesses.Guess do
   @doc false
   def changeset(guess, attrs) do
     guess
-    |> cast(attrs, [:correct])
-    |> validate_required([:correct])
+    |> cast(attrs, [:correct, :user_id, :airport_id])
+    |> validate_required([:correct, :user_id, :airport_id])
   end
 end

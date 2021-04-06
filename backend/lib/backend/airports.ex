@@ -37,6 +37,10 @@ defmodule Backend.Airports do
   """
   def get_airport!(id), do: Repo.get!(Airport, id)
 
+  def get_airport_by_icao(icao) do
+    Repo.get_by(Airport, icao: icao)
+  end
+
   @doc """
   Creates a airport.
 
