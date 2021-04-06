@@ -9,6 +9,7 @@ defmodule Backend.Stats do
     )
 
     hd hd results.rows
+    # W/L
   end
 
   def airport_win_loss(airport_id) do
@@ -18,25 +19,30 @@ defmodule Backend.Stats do
     )
 
     hd hd results.rows
+    # W/L
   end
 
   def airports_win_loss() do
     {_, results} = Repo.query(
-      "SELECT airport_id, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss FROM guesses JOIN airports a ON airport_id = a.id GROUP BY airport_id ORDER BY win_loss DESC;"
+      "SELECT icao, name, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss FROM guesses JOIN airports a ON airport_id = a.id GROUP BY icao, name ORDER BY win_loss DESC;"
     )
 
     Enum.map(
       results.rows,
-      fn r -> {r |> hd, r |> tl |> hd} end
+      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd} end
     )
+    # [{ icao, name, W/L }]
   end
 
   def users_win_loss() do
     {_, results} = Repo.query(
-      "SELECT user_id, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss;"
+      "SELECT user_id, name, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss FROM guesses JOIN users u ON guesses.user_id = u.id GROUP BY user_id, name ORDER BY win_loss DESC;"
     )
 
-    results.rows
+    Enum.map(results.rows,
+      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd} end
+    )
+    # [{user_id, name, W/L}]
   end
 
   def airport_total_guesses(airport_id) do
@@ -46,6 +52,7 @@ defmodule Backend.Stats do
     )
 
     hd hd results.rows
+    # Total guesses as int
   end
 
   def user_total_guesses(user_id) do
@@ -55,15 +62,19 @@ defmodule Backend.Stats do
     )
 
     hd hd results.rows
+    # Total guesses as int
   end
 
   def user_guesses_airports(user_id) do
     {_, results} = Repo.query(
-      "SELECT airport_id FROM guesses JOIN users u ON guesses.user_id = u.id JOIN airports a ON guesses.airport_id = a.id WHERE user_id = $1 GROUP BY user_id, airport_id;",
+      "SELECT airport_id, a.name, icao FROM guesses JOIN users u ON guesses.user_id = u.id JOIN airports a ON guesses.airport_id = a.id WHERE user_id = $1 GROUP BY user_id, airport_id, a.name, icao;",
       [user_id]
     )
 
-    Enum.map(results.rows, fn r -> hd r end)
+    Enum.map(results.rows,
+      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd} end)
+
+    # [{airport_id, name, icao}]
   end
 
   def user_airport_win_loss(user_id, airport_id) do
@@ -73,10 +84,13 @@ defmodule Backend.Stats do
     )
 
     hd hd results.rows
+
+    # W/L
   end
 
   def user_airports_win_losses(user_id) do
     user_guesses_airports(user_id)
-    |> Enum.map(fn airport -> {airport, user_airport_win_loss(user_id, airport)} end)
+    |> Enum.map(fn {air_id, name, icao} -> {air_id, name, icao, user_airport_win_loss(user_id, air_id)} end)
+     # [{airport_id, name, icao, W/L}]
   end
 end
