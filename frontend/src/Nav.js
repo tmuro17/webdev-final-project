@@ -62,6 +62,16 @@ const AppNav = ({session}) => {
                   </a>
                 </li>
                 <li className="nav-item hover:bg-orange rounded">
+                  <a href="/leaderboard" className="px-3 py-2 flex items-center leading-snug">
+                    Leaderboard
+                  </a>
+                </li>
+                <li className="nav-item hover:bg-orange rounded">
+                  <a href="/airports" className="px-3 py-2 flex items-center leading-snug">
+                    Airport Stats
+                  </a>
+                </li>
+                <li className="nav-item hover:bg-orange rounded">
                   <LoginLogoutLink session={session}/>
                 </li>
                 {!session &&

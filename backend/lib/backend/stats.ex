@@ -22,27 +22,40 @@ defmodule Backend.Stats do
     # W/L
   end
 
-  def airports_win_loss() do
+  def airports_win_loss_top_25() do
     {_, results} = Repo.query(
-      "SELECT icao, name, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss FROM guesses JOIN airports a ON airport_id = a.id GROUP BY icao, name ORDER BY win_loss DESC;"
+      "SELECT icao, name, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss, count(*) FROM guesses JOIN airports a ON airport_id = a.id GROUP BY icao, name ORDER BY win_loss DESC LIMIT 25;"
     )
 
     Enum.map(
       results.rows,
-      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd} end
+      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd, r |> tl |> tl |> tl |> hd} end
     )
-    # [{ icao, name, W/L }]
+    # [{ icao, name, W/L , total}]
   end
+
+  def airports_win_loss_bottom_25() do
+    {_, results} = Repo.query(
+      "SELECT icao, name, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss, count(*) FROM guesses JOIN airports a ON airport_id = a.id GROUP BY icao, name ORDER BY win_loss LIMIT 25;"
+    )
+
+    Enum.map(
+      results.rows,
+      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd, r |> tl |> tl |> tl |> hd} end
+    )
+    # [{ icao, name, W/L , total}]
+  end
+
 
   def users_win_loss() do
     {_, results} = Repo.query(
-      "SELECT user_id, name, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss FROM guesses JOIN users u ON guesses.user_id = u.id GROUP BY user_id, name ORDER BY win_loss DESC;"
+      "SELECT user_id, name, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss FROM guesses JOIN users u ON guesses.user_id = u.id GROUP BY user_id, name ORDER BY win_loss DESC LIMIT 100;"
     )
 
     Enum.map(results.rows,
-      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd} end
+      fn r -> {r |> tl |> hd, r |> tl |> tl |> hd} end
     )
-    # [{user_id, name, W/L}]
+    # [{name, W/L}]
   end
 
   def airport_total_guesses(airport_id) do
@@ -91,6 +104,7 @@ defmodule Backend.Stats do
   def user_airports_win_losses(user_id) do
     user_guesses_airports(user_id)
     |> Enum.map(fn {air_id, name, icao} -> {air_id, name, icao, user_airport_win_loss(user_id, air_id)} end)
+    |> Enum.sort_by(fn {_, _, _, wl} -> wl end, :desc)
      # [{airport_id, name, icao, W/L}]
   end
 end
