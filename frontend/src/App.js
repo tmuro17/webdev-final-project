@@ -6,6 +6,10 @@ import Register from "./Users/Register";
 import Login from './Users/Login';
 import Game from './Game/Game';
 import { PhoenixSocketProvider } from './utils/PhoenixSocketContext'
+import Profile from "./Stats/Profile";
+import AirportsStats from "./Stats/Airports";
+import AirportStats from "./Stats/Airport";
+import Leaderboard from "./Stats/Leaderboard";
 
 
 const App = () => {
@@ -27,6 +31,19 @@ const App = () => {
         </Route>
         <Route path="/register" exact>
           <Register/>
+        </Route>
+        <PrivateRoute path="/profile" exact>
+          <Profile/>
+        </PrivateRoute>
+        <Route path="/airports" exact>
+          <AirportsStats/>
+        </Route>
+        <Route path="/airport/:icao" exact render={(props) => {
+          let icao = props.match.params.icao;
+          return <AirportStats icao={icao}/>;
+        }}/>
+        <Route path="/leaderboard" exact>
+          <Leaderboard/>
         </Route>
         <Route path="/users/list">
           <UserList/> 

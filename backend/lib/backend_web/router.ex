@@ -27,6 +27,13 @@ defmodule BackendWeb.Router do
      resources "/session", SessionController, only: [:create]
      resources "/airports", AirportController, except: [:new, :edit]
      resources "/guesses", GuessController, except: [:new, :edit]
+     get "/user_airports_win_losses/:id", StatsController, :user_airports_win_losses
+     get "/user_win_loss/:id", StatsController, :user_win_loss
+     get "/user_total_guesses/:id", StatsController, :user_total_guesses
+     get "/airports_easiest_25", StatsController, :airports_easiest_25
+     get "/airports_hardest_25", StatsController, :airports_hardest_25
+     get "/airport/:icao", StatsController, :airport_info
+     get "/top_100", StatsController, :top_100
   end
 
   # Enables LiveDashboard only for development
