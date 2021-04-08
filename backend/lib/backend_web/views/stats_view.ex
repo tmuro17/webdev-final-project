@@ -8,11 +8,13 @@ defmodule BackendWeb.StatsView do
 
   def render("user_airport_win_loss.json", %{stats: win_loss}) do
     # {airport_id, name, icao, W/L}
-    {airport_id, airport_name, icao, wl_ratio} = win_loss
+    {airport_id, airport_name, icao, lat, lng, wl_ratio} = win_loss
     %{
       airport_id: airport_id,
       airport_name: airport_name,
       icao: icao,
+      lat: lat,
+      lng: lng,
       wl_ratio: wl_ratio
     }
   end

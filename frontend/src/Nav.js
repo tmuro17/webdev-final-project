@@ -4,20 +4,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 // I will implement faIcons for the navbar in the future
 import {connect} from "react-redux";
 
-
-// ill move this functionality to the profile page, leaving it in a comment for ez copying
-// let SessionInfo = connect()(({session, dispatch}) => {
-//   const logout = () => {
-//     dispatch({type: 'session/clear'});
-//   };
-//   return (
-//     <p>
-//       Logged in as {session.email} &nbsp;
-//       <Button onClick={logout}>Logout</Button>
-//     </p>
-//   );
-// });
-
 const LoginLogoutLink = connect()(({session, dispatch}) => {
   const logout = () => {
     dispatch({type: 'session/clear'});

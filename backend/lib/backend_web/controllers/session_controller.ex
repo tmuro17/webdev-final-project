@@ -10,6 +10,7 @@ defmodule BackendWeb.SessionController do
       session = %{
         user_id: user.id,
         email: user.email,
+        username: user.name,
         token: Phoenix.Token.sign(conn, "user_id", user.id)
       }
 

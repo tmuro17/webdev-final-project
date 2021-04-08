@@ -5,6 +5,8 @@ defmodule Backend.Airports.Airport do
   schema "airports" do
     field :icao, :string
     field :name, :string
+    field :lat, :float
+    field :lng, :float
 
     timestamps()
   end
@@ -12,7 +14,7 @@ defmodule Backend.Airports.Airport do
   @doc false
   def changeset(airport, attrs) do
     airport
-    |> cast(attrs, [:name, :icao])
-    |> validate_required([:name, :icao])
+    |> cast(attrs, [:name, :icao, :lat, :lng])
+    |> validate_required([:name, :icao, :lat, :lng])
   end
 end

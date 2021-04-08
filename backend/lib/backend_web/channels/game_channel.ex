@@ -5,8 +5,13 @@ defmodule BackendWeb.GameChannel do
   alias Backend.Users
   alias Backend.Guesses
   alias Backend.Airports
+  alias BackendWeb.Endpoint
 
   def join("game:global", _message, socket) do
+    {:ok, socket}
+  end
+
+  def join("game:announcements", _message, socket) do
     {:ok, socket}
   end
 
@@ -28,13 +33,20 @@ defmodule BackendWeb.GameChannel do
     [correct | rest] = airports
     options = Enum.take(airports, 4)
 
+    # this is temporary for testing so i didnt have to reseed the entire db to get new lat/lngs added...
+    Airports.update_airport(Airports.get_airport_by_icao(correct[:icao]), %{lat: correct[:coordinates][:lat], lng: correct[:coordinates][:lng]})
+
     # insert in db if it isnt already
     if Airports.get_airport_by_icao(correct[:icao]) == nil do
       Airports.create_airport(%{
         icao: correct[:icao],
-        name: correct[:name]
+        name: correct[:name],
+        lat: correct[:coordinates][:lat],
+        lng: correct[:coordinates][:lng]
       })
     end
+
+    IO.puts("xx: #{Kernel.inspect(Airports.get_airport_by_icao(correct[:icao]))}")
 
     socket =
       socket
@@ -60,14 +72,23 @@ defmodule BackendWeb.GameChannel do
       airport_id: Airports.get_airport_by_icao(correct).id
     })
 
-    IO.puts("guess obj: #{Kernel.inspect(new_guess)}")
+    outcome_obj = %{correct: outcome}
 
-    if outcome do
-      push(socket, "outcome", %{correct: true, option: correct})
-    else
-      push(socket, "outcome", %{correct: false, option: guess})
-    end
+    outcome_obj =
+      if outcome do
+        Map.put(outcome_obj, :option, correct)
+      else
+        Map.put(outcome_obj, :option, guess)
+      end
 
+    push(socket, "outcome", outcome_obj)
+
+    # add name to broadcast for widget display
+    outcome_obj =
+      outcome_obj
+      |> Map.put(:username, user.name)
+      |> Map.put(:actual, correct)
+    Endpoint.broadcast!("game:announcements", "guess_announcement", outcome_obj)
     {:noreply, socket}
   end
 end

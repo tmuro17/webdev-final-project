@@ -55,6 +55,7 @@ function Game({session}) {
   }
 
   const getNewQuestion = () => {
+    setResult(null);
     gameChannel.push(GET_QUESTION_MSG);
   }
 
@@ -71,7 +72,7 @@ function Game({session}) {
     <div id="game">
       <div className="flex flex-row w-full mt-4">
         <div className="w-2/3">
-          {round && <MapImage coordinates={round.map_coords}/>} {/* rn this is the location of KJFK */}
+          {round && <MapImage coordinates={round.map_coords}/>}
         </div>
         <div className="flex flex-col w-1/3 align-center text-center">
           {round && // only show if options are available

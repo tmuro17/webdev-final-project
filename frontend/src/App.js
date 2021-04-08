@@ -10,12 +10,14 @@ import Profile from "./Stats/Profile";
 import AirportsStats from "./Stats/Airports";
 import AirportStats from "./Stats/Airport";
 import Leaderboard from "./Stats/Leaderboard";
+import AnnouncementWidget from './Game/AnnouncementWidget';
 
 
 const App = () => {
   return (
-    <div id="app" className="container mx-auto px-4 font-varela">
-      <Nav/>
+    <div id="app">
+      <div className="container mx-auto px-4">
+        <Nav/>
       <Switch>
         <Route path="/" exact>
           <div>home</div>
@@ -50,6 +52,10 @@ const App = () => {
           {/* // for debugging */}
         </Route>
       </Switch>
+      </div>
+      <PhoenixSocketProvider>
+        <AnnouncementWidget/>
+      </PhoenixSocketProvider>
     </div>
   )
 }
