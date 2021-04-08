@@ -58,15 +58,52 @@ const error = (state = null, action) => {
       return null;
     case "error/set":
       return action.data;
+    case "frontend_auth/set":
+      return null;
     default:
       return state;
   }
 };
 
+const save_frontend_auth = (auth) => {
+  let frontend_auth = Object.assign({}, auth, {time: Date.now()});
+  localStorage.setItem("frontend_auth", JSON.stringify(frontend_auth));
+};
+
+export const load_frontend_auth = () => {
+  let frontend_auth = localStorage.getItem("frontend_auth");
+  if (!frontend_auth) {
+    return null;
+  }
+
+  frontend_auth = JSON.parse(frontend_auth);
+  let age = Date.now() - frontend_auth.time;
+  let expiry = 24 * 60 * 60 * 1000;
+  if (age < expiry) {
+    return frontend_auth;
+  } else {
+    return null;
+  }
+};
+
+const frontend_auth = (state = load_frontend_auth(), action) => {
+  switch (action.type) {
+    case "frontend_auth/set":
+      save_frontend_auth(action.data);
+      return action.data;
+    case "frontend_auth/clear":
+      localStorage.removeItem("frontend_auth");
+      return null;
+    default:
+      return state;
+  }
+};
+
+
 const root_reducer = (state, action) => {
   console.log("root_reducer", state, action);
   let reducer = combineReducers({
-    users, user_form, session, error
+    users, user_form, session, frontend_auth, error
   });
   return reducer(state, action);
 };

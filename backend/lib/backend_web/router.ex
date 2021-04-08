@@ -25,6 +25,7 @@ defmodule BackendWeb.Router do
 
      resources "/users", UserController, except: [:new, :edit]
      resources "/session", SessionController, only: [:create]
+     resources "/frontend_auth", FrontendAuthController, only: [:create]
      resources "/airports", AirportController, except: [:new, :edit]
      resources "/guesses", GuessController, except: [:new, :edit]
      get "/user_airports_win_losses/:id", StatsController, :user_airports_win_losses
