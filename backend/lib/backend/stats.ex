@@ -80,12 +80,12 @@ defmodule Backend.Stats do
 
   def user_guesses_airports(user_id) do
     {_, results} = Repo.query(
-      "SELECT airport_id, a.name, icao FROM guesses JOIN users u ON guesses.user_id = u.id JOIN airports a ON guesses.airport_id = a.id WHERE user_id = $1 GROUP BY user_id, airport_id, a.name, icao;",
+      "SELECT airport_id, a.name, icao, a.lat, a.lng FROM guesses JOIN users u ON guesses.user_id = u.id JOIN airports a ON guesses.airport_id = a.id WHERE user_id = $1 GROUP BY user_id, airport_id, a.name, icao, a.lat, a.lng;",
       [user_id]
     )
 
     Enum.map(results.rows,
-      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd} end)
+      fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd, r |> tl |> tl |> tl |> hd, r |> tl |> tl |> tl |> tl |> hd} end)
 
     # [{airport_id, name, icao}]
   end
@@ -103,8 +103,8 @@ defmodule Backend.Stats do
 
   def user_airports_win_losses(user_id) do
     user_guesses_airports(user_id)
-    |> Enum.map(fn {air_id, name, icao} -> {air_id, name, icao, user_airport_win_loss(user_id, air_id)} end)
-    |> Enum.sort_by(fn {_, _, _, wl} -> wl end, :desc)
+    |> Enum.map(fn {air_id, name, icao, lat, lng} -> {air_id, name, icao, lat, lng, user_airport_win_loss(user_id, air_id)} end)
+    |> Enum.sort_by(fn {_, _, _, _, _, wl} -> wl end, :desc)
      # [{airport_id, name, icao, W/L}]
   end
 end

@@ -24,8 +24,9 @@ function Controls({ options, handleGuess, getNewQuestion, result }) {
       resultSection = (
         <div className="p-4 text-lg">
           <div>
-            Please try again. Your guess {result.option} was incorrect.
+            Your guess {result.option} was incorrect. Try again next time!
           </div>
+          <button className="bg-orange hover:bg-lightgray w-4/5 p-2 rounded" onClick={e => getNewQuestion()}>Next Airport!</button>
         </div>
       )
     }
@@ -34,12 +35,13 @@ function Controls({ options, handleGuess, getNewQuestion, result }) {
   return (
     <div>
       <h1 className="my-4 font-bold">Which airport is this?</h1>
-      <div className="flex flex-wrap text-xl">
-        {optionButtons}
-      </div>
-        {result &&
-          resultSection
-        }
+      {result ?
+        resultSection
+        : 
+        <div className="flex flex-wrap text-xl">
+          {optionButtons}
+        </div>
+      }
     </div>
   )
 }
