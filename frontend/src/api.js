@@ -1,8 +1,18 @@
-import store from "./store";
-import {data} from "autoprefixer";
+import store, {load_frontend_auth} from "./store";
 
 export const api_get = async path => {
-  let text = await fetch("http://localhost:4000/api/v1" + path, {});
+  await update_frontend_auth();
+
+  let auth = load_frontend_auth();
+
+  let options = {
+    method: "GET",
+    headers: {
+      "x-auth": auth.token
+    },
+  };
+
+  let text = await fetch("http://localhost:4000/api/v1" + path, options);
   let resp = await text.json();
 
   return resp.data;
@@ -38,9 +48,9 @@ export const api_login = (email, password) => {
           type: "session/set",
           data: data.session,
         };
-        console.log('setting session')
+        console.log('setting session');
         store.dispatch(action);
-        resolve('SUCCESS')
+        resolve('SUCCESS');
       } else if (data.error) {
         let action = {
           type: "error/set",
@@ -51,40 +61,64 @@ export const api_login = (email, password) => {
         reject(data.error);
       }
     });
-  })
+  });
+};
+
+export const update_frontend_auth = () => {
+  return new Promise((resolve, reject) => {
+    api_post("/frontend_auth", {}).then((data) => {
+      if (data.frontend_auth) {
+        let action = {
+          type: "frontend_auth/set",
+          data: data.frontend_auth,
+        };
+        console.log('setting frontend_auth');
+        store.dispatch(action);
+        resolve('SUCCESS');
+      } else if (data.error) {
+        let action = {
+          type: "error/set",
+          data: data.error,
+        };
+        store.dispatch(action);
+        // handle this better in the future
+        reject(data.error);
+      }
+    });
+  });
 };
 
 export const fetch_user = async id => {
-  return await api_get(`/users/${id}`)
-}
+  return await api_get(`/users/${id}`);
+};
 
 export const fetch_user_airport_win_losses = async id => {
-  return await api_get(`/user_airports_win_losses/${id}`)
-}
+  return await api_get(`/user_airports_win_losses/${id}`);
+};
 
 export const fetch_user_win_loss = async id => {
-  return await api_get(`/user_win_loss/${id}`)
-}
+  return await api_get(`/user_win_loss/${id}`);
+};
 
 export const fetch_user_total_guesses = async id => {
-  return await api_get(`/user_total_guesses/${id}`)
-}
+  return await api_get(`/user_total_guesses/${id}`);
+};
 
 export const fetch_airports_easiest_25 = async () => {
-  return await api_get("/airports_easiest_25")
-}
+  return await api_get("/airports_easiest_25");
+};
 
 export const fetch_airports_hardest_25 = async () => {
-  return await api_get("/airports_hardest_25")
-}
+  return await api_get("/airports_hardest_25");
+};
 
 export const fetch_airport_info = async icao => {
-  return await api_get(`/airport/${icao}`)
-}
+  return await api_get(`/airport/${icao}`);
+};
 
 export const fetch_top_100_users = async () => {
-  return await api_get("/top_100")
-}
+  return await api_get("/top_100");
+};
 
 
 export const load_defaults = () => {

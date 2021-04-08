@@ -3,8 +3,10 @@ defmodule BackendWeb.UserController do
 
   alias Backend.Users
   alias Backend.Users.User
-
   action_fallback BackendWeb.FallbackController
+
+  alias BackendWeb.Plugs
+  plug Plugs.FrontendAuth
 
   def index(conn, _params) do
     users = Users.list_users()
