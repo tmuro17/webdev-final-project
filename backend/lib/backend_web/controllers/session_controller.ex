@@ -1,6 +1,9 @@
 defmodule BackendWeb.SessionController do
   use BackendWeb, :controller
 
+  alias BackendWeb.Plugs
+  plug Plugs.FrontendAuth
+
   def create(conn, %{"email" => email, "password" => password}) do
     user = Backend.Users.auth(email, password)
     if user do
