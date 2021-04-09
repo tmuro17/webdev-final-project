@@ -6,9 +6,6 @@ defmodule BackendWeb.AirportController do
 
   action_fallback BackendWeb.FallbackController
 
-  alias BackendWeb.Plugs
-  plug Plugs.FrontendAuth
-
   def index(conn, _params) do
     airports = Airports.list_airports()
     render(conn, "index.json", airports: airports)

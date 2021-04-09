@@ -6,9 +6,6 @@ defmodule BackendWeb.GuessController do
 
   action_fallback BackendWeb.FallbackController
 
-  alias BackendWeb.Plugs
-  plug Plugs.FrontendAuth
-
   def index(conn, _params) do
     guesses = Guesses.list_guesses()
     render(conn, "index.json", guesses: guesses)

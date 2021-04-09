@@ -4,10 +4,6 @@ defmodule BackendWeb.StatsController do
   alias Backend.Stats
   alias Backend.Airports
 
-
-  alias BackendWeb.Plugs
-  plug Plugs.FrontendAuth
-
   action_fallback BackendWeb.FallbackController
 
   def user_airports_win_losses(conn, %{"id" => id}) do
