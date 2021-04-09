@@ -23,19 +23,11 @@ function StatsMap({airports}) {
     zoomControlOptions: {
       position: window.google.maps.ControlPosition.RIGHT_CENTER
     },
-    // disableDefaultUI: true,
     draggable: true,
     mapTypeId: 'satellite'
   }  
 
   const onLoad = React.useCallback(function callback(map) {
-    // let bounds = new window.google.maps.LatLngBounds();
-    // airports.forEach(info => {
-    //   console.log('new bound: ', {lat: info.lat, lng: info.lng})
-    //   bounds.extend({lat: info.lat, lng: info.lng});
-    // })
-    // console.log('haha')
-    // map.fitBounds(bounds);
     setMap(map)
   }, [])
 
@@ -55,13 +47,12 @@ function StatsMap({airports}) {
       <InfoWindow
       onCloseClick={e => setSelectedIndex(-1)}
       position={{lat: info.lat, lng: info.lng}}>
-        <div>
+        <div className="text-black">
           <div><span className="font-bold">{info.icao}</span>: {info.airport_name}</div>
           <div>W/L Ratio: {info.wl_ratio}</div>
         </div>
       </InfoWindow>
       }
-      
     </Marker>
   ))
 

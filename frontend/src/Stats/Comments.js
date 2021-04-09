@@ -43,7 +43,7 @@ function Comments({session, airport_id}) {
     <div className="w-full">
       {session &&
         <div className="flex flex-col border-2 p-2 bg-darkgray rounded-md">
-          <textarea className="focus:shadow-outline p-3 border rounded" type="text" placeholder="Write a comment!" onChange={e => setBody(e.target.value)}/>
+          <textarea className="focus:shadow-outline p-3 border rounded text-black" type="text" placeholder="Write a comment!" onChange={e => setBody(e.target.value)}/>
           <button className="mt-4 w-1/4 py-2 px-4 bg-orange rounded" onClick={handleSubmit}>Submit</button>
       </div>
       }

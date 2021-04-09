@@ -17,8 +17,8 @@ import HomePage from "./HomePage";
 
 const App = () => {
   return (
-    <div id="app">
-      <div className="container mx-auto px-4">
+    <div id="app" className="bg-backblack h-screen text-white">
+      <div className="container mx-auto h-full px-4">
         <Nav/>
       <Switch>
         <Route path="/" exact>
