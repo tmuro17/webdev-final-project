@@ -2,11 +2,17 @@ import {useEffect, useState} from "react";
 import {fetch_airports_easiest_25, fetch_airports_hardest_25} from "../api";
 import {useHistory} from "react-router-dom";
 
+const gotoAirport = (icao, history) => {
+  // 
+  history.push('/airport/' + icao)
+}
+
 const AirportTable = ({airports}) => {
+  let history = useHistory();
   let airportRows = airports.map((airport) => {
     return (
-      <tr className="border">
-        <td className="text-center "><a className="bg-orange px-2" href={"/airport/" + airport.icao}>{airport.airport_name}</a></td>
+      <tr className="border hover:bg-darkwhite hover:text-black cursor-pointer" onClick={e => gotoAirport(airport.icao, history)}>
+        <td className="text-center ">{airport.airport_name}</td>
         <td className="text-center">{airport.icao}</td>
         <td className="text-center">{Math.round((airport.win_loss + Number.EPSILON) * 100) / 100}</td>
         <td className="text-center">{airport.total}</td>
@@ -73,7 +79,7 @@ const AirportsStats = () => {
         </button>
       </div>
       <br/>
-      <h3>Click an airport name to view details.</h3>
+      <h3>Click a row to view airport details.</h3>
       <br/>
       <h2 className="text-lg font-bold">25 Hardest:</h2>
       <AirportTable airports={hard25}/>

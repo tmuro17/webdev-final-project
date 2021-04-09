@@ -17,7 +17,7 @@ import HomePage from "./HomePage";
 
 const App = () => {
   return (
-    <div id="app">
+    <div id="app" className="bg-backblack h-screen text-white">
       <div className="container mx-auto px-4">
         <Nav/>
       <Switch>

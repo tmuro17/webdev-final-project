@@ -29,7 +29,8 @@ module.exports = {
       darkgray: '#424642',
       orange: '#c06014',
       lightgray: '#536162',
-      darkwhite: '#f3f4ed'
+      darkwhite: '#f3f4ed',
+      backblack: '#191a1c'
     },
     spacing: {
       px: '1px',

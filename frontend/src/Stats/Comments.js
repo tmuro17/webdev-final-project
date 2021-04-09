@@ -48,7 +48,7 @@ function Comments({session, airport_id}) {
       </div>
       }
       
-      <div className="flex flex-col p-2">
+      <div className="flex flex-col p-2 overflow-auto">
         {commentDivs}
       </div>
     </div>
