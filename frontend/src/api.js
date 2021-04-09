@@ -1,7 +1,7 @@
 import store from "./store";
 
 export const api_get = async path => {
-  let text = await fetch("http://short-final-backend.tmuro17.xyz/api/v1" + path, {});
+  let text = await fetch("https://short-final-backend.tmuro17.xyz/api/v1" + path, {});
   let resp = await text.json();
 
   return resp.data;
@@ -16,7 +16,7 @@ export const api_post = async (path, data) => {
     body: JSON.stringify(data),
   };
 
-  let txt = await fetch("http://short-final-backend.tmuro17.xyz/api/v1" + path, options);
+  let txt = await fetch("https://short-final-backend.tmuro17.xyz/api/v1" + path, options);
   return await txt.json();
 };
 
