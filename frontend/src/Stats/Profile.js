@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import {useEffect, useState} from "react";
 import {fetch_user, fetch_user_airport_win_losses, fetch_user_total_guesses, fetch_user_win_loss} from "../api";
 import StatsMap from './StatsMap';
+import {useHistory} from "react-router-dom";
 
 const AirportWinLosses = ({details}) => {
   let detailRows = details.map((detail, index) => {
@@ -34,6 +35,7 @@ const AirportWinLosses = ({details}) => {
 
 const Profile = ({session}) => {
   let user_id = session["user_id"];
+  let history = useHistory();
   const [user, setUser] = useState({});
   const [airportWinLosses, setAirportWinLosses] = useState([]);
   const [globalWinLoss, setGlobalWinLoss] = useState({});
@@ -55,8 +57,6 @@ const Profile = ({session}) => {
     fetch_user_total_guesses(user_id).then((num_guesses) => setTotalGuesses(num_guesses));
   }, [user_id]);
 
-  console.log(airportWinLosses);
-  console.log("-----------------");
   return (
     <div className="flex flex-row">
       <div className="flex flex-col w-1/3">
@@ -88,6 +88,14 @@ const Profile = ({session}) => {
               value={user.email}
               readOnly/>
           </div>
+          <div>
+            <button onClick={(_) => history.push("/edit_user")}
+                    className="bg-orange text-white font-bold py-2 px-4 rounded"
+                    type="button">
+              Edit User
+            </button>
+          </div>
+
         </div>
         <br/>
         <br/>
