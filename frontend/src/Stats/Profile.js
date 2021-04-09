@@ -8,7 +8,7 @@ const AirportWinLosses = ({details}) => {
   let detailRows = details.map((detail, index) => {
     console.log(detail);
     return (
-      <tr key={index}>
+      <tr key={index} className="border">
         <td className="text-center">{detail.airport_name}</td>
         <td className="text-center">{detail.icao}</td>
         <td className="text-center">{Math.round((detail.wl_ratio + Number.EPSILON) * 100) / 100}</td>
