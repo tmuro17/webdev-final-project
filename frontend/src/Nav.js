@@ -37,9 +37,14 @@ const AppNav = ({session}) => {
             </div>
             <div className="flex lg:flex-grow items-center" id="example-navbar-info">
               <ul className="flex flex-col lg:flex-row list-none ml-auto text-sm uppercase font-bold text-white">
+              <li className="nav-item hover:bg-orange rounded">
+                  <a href="/play/regional" className="px-3 py-2 flex items-center leading-snug">
+                    Play Regional
+                  </a>
+                </li>
                 <li className="nav-item hover:bg-orange rounded">
                   <a href="/play" className="px-3 py-2 flex items-center leading-snug">
-                    Play
+                    Play Hardest
                   </a>
                 </li>
                 <li className="nav-item hover:bg-orange rounded">

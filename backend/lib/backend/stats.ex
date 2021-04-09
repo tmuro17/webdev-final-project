@@ -43,7 +43,24 @@ defmodule Backend.Stats do
       results.rows,
       fn r -> {r |> hd, r |> tl |> hd, r |> tl |> tl |> hd, r |> tl |> tl |> tl |> hd} end
     )
-    # [{ icao, name, W/L , total}]
+  end
+
+  def game_airports_hardest_25() do
+    {_, results} = Repo.query(
+      "SELECT icao, name, lat, lng, (SUM(CASE WHEN correct = TRUE THEN 1 ELSE 0 END) / COUNT(*)::float) * 100 AS win_loss, count(*) FROM guesses JOIN airports a ON airport_id = a.id GROUP BY icao, name, lat, lng ORDER BY win_loss LIMIT 25;"
+    )
+
+    Enum.map(
+      results.rows,
+      fn r ->
+        %{icao: r |> hd,
+          name: r |> tl |> hd,
+          coordinates: %{
+            lat: r |> tl |> tl |> hd,
+            lng: r |> tl |> tl |> tl |> hd
+          }
+        }
+      end)
   end
 
 

@@ -6,6 +6,7 @@ defmodule BackendWeb.GameChannel do
   alias Backend.Guesses
   alias Backend.Airports
   alias BackendWeb.Endpoint
+  alias Backend.Stats
 
   def join("game:global", _message, socket) do
     {:ok, socket}
@@ -15,13 +16,23 @@ defmodule BackendWeb.GameChannel do
     {:ok, socket}
   end
 
-  def handle_in("user_location", %{"user_id" => user_id, "coordinates" => coordinates}, socket) do
+  def handle_in("user_location", %{"user_id" => user_id, "coordinates" => coordinates, "regional" => regional}, socket) do
+    IO.puts("regionality: #{regional}")
     user = Users.get_user!(user_id)
     airports =
-      ApiAgent.get_airports_in_radius(coordinates, 200)
-      |> Enum.shuffle # set to 200km for now
+      case regional do
+        true ->
+          ApiAgent.get_airports_in_radius(coordinates, 500)
+          |> Enum.shuffle
+        false ->
+          IO.puts("worked")
+          # get top 25 hardest airports
+          Stats.game_airports_hardest_25()
+      end
+
     socket =
       socket
+      |> assign(:coordinates, coordinates)
       |> assign(:unused_airports, airports)
       |> assign(:used_airports, [])
       |> assign(:user, user)
@@ -30,32 +41,48 @@ defmodule BackendWeb.GameChannel do
 
   def handle_in("get_question", _msg, socket) do
     airports = socket.assigns[:unused_airports]
-    [correct | rest] = airports
-    options = Enum.take(airports, 4)
-
-    # this is temporary for testing so i didnt have to reseed the entire db to get new lat/lngs added...
-    Airports.update_airport(Airports.get_airport_by_icao(correct[:icao]), %{lat: correct[:coordinates][:lat], lng: correct[:coordinates][:lng]})
-
-    # insert in db if it isnt already
-    if Airports.get_airport_by_icao(correct[:icao]) == nil do
-      Airports.create_airport(%{
-        icao: correct[:icao],
-        name: correct[:name],
-        lat: correct[:coordinates][:lat],
-        lng: correct[:coordinates][:lng]
-      })
-    end
-
-    IO.puts("xx: #{Kernel.inspect(Airports.get_airport_by_icao(correct[:icao]))}")
-
     socket =
-      socket
-      |> assign(:unused_airports, rest)
-      |> assign(:used_airports, socket.assigns[:used_airports] ++ [correct])
-      |> assign(:correct_answer, correct[:icao])
-    round = %{options: Enum.shuffle(options), map_coords: correct[:coordinates]}
-    push(socket, "incoming_question", round)
+      case length(airports) > 4 do
+        true ->
+          [correct | rest] = airports
+          options = Enum.take(airports, 4)
+          IO.puts("hi #{Kernel.inspect(correct)}")
+          # insert in db if it isnt already
+          if Airports.get_airport_by_icao(correct[:icao]) == nil do
+            Airports.create_airport(%{
+              icao: correct[:icao],
+              name: correct[:name],
+              lat: correct[:coordinates][:lat],
+              lng: correct[:coordinates][:lng]
+            })
+          end
+
+          IO.puts("xx: #{Kernel.inspect(Airports.get_airport_by_icao(correct[:icao]))}")
+          round = %{options: Enum.shuffle(options), map_coords: correct[:coordinates]}
+          push(socket, "incoming_question", round)
+
+          socket
+          |> assign(:unused_airports, rest)
+          |> assign(:used_airports, socket.assigns[:used_airports] ++ [correct])
+          |> assign(:correct_answer, correct[:icao])
+
+        false ->
+          # game over, get new airports preemptively
+          airports =
+            ApiAgent.get_airports_in_radius(socket.assigns[:coordinates], 500)
+            |> Enum.shuffle
+          push(socket, "game_over", %{})
+          socket
+          |> assign(:unused_airports, airports)
+          |> assign(:used_airports, [])
+
+      end
+
     {:noreply, socket}
+  end
+
+  def handle_in("new_game", _msg, socket) do
+    {:reply, :ok, socket}
   end
 
   def handle_in("new_guess", %{"guess" => guess}, socket) do

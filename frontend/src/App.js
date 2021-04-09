@@ -23,9 +23,14 @@ const App = () => {
           <div>home</div>
         </Route>
         {/* private route means you need to be logged in */}
+        <PrivateRoute path="/play/regional" exact>
+          <PhoenixSocketProvider>
+            <Game regional={true} />
+          </PhoenixSocketProvider>
+        </PrivateRoute>
         <PrivateRoute path="/play" exact>
           <PhoenixSocketProvider>
-            <Game/>
+            <Game regional={false}/>
           </PhoenixSocketProvider>
         </PrivateRoute>
         <Route path="/login" exact>

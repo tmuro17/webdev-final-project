@@ -3,8 +3,11 @@ defmodule BackendWeb.CommentController do
 
   alias Backend.Comments
   alias Backend.Comments.Comment
+  alias BackendWeb.Plugs
 
   action_fallback BackendWeb.FallbackController
+
+  plug Plugs.UserAuth when action in [:create]
 
   def index(conn, _params) do
     comments = Comments.list_comments()
@@ -21,7 +24,6 @@ defmodule BackendWeb.CommentController do
   end
 
   def comments_for_airport(conn, %{"id" => id}) do
-    IO.puts("caught id #{id}")
     comments = Comments.get_comments_for_airport(id)
     conn
     |> render("comments_for_airport.json", %{comments: comments})

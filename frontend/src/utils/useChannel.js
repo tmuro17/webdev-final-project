@@ -9,7 +9,6 @@ const useChannel = channelName => {
     const gameChannel = socket.channel(channelName);
 
     gameChannel.join().receive('ok', () => {
-      console.log('joined!')
       setChannel(gameChannel);
     });
 

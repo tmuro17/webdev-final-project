@@ -125,7 +125,7 @@ const Profile = ({session}) => {
         <AirportWinLosses details={airportWinLosses}/>
       </div>
       <div className="w-2/3 p-4 text-center">
-        Your Map
+        <h1 className="font-bold m-2">Your Map</h1>
         <StatsMap airports={airportWinLosses} />
       </div>
     </div>
