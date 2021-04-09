@@ -17,7 +17,7 @@ config :cors_plug,
        origin: ["https://short-final.tmuro17.xyz"],
        max_age: 86400,
        methods: ["GET", "POST", "PATCH", "DELETE"],
-       headers: ["x-auth", "Content-Type"]
+       headers: ["x-auth", "Content-Type", "Accept-Language"]
 
 # Do not print debug messages in production
 config :logger, level: :info
