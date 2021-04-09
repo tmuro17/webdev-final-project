@@ -56,7 +56,7 @@ function AnnouncementWidget({session}) {
 
   if (session && announcements.length > 0) {
     return (
-      <div className="fixed right-32 bottom-1/5 border-orange border-4 bg-lightgray p-2 rounded h-1/5 w-1/5 shadow-xl text-xs">
+      <div className="fixed right-32 bottom-32 border-orange border-4 bg-lightgray p-2 rounded h-1/5 w-1/5 shadow-xl text-xs text-black">
         <div className="font-bold">Live</div>
         <div id="announcements" className="flex flex-col overflow-auto h-4/5">
           {messages}

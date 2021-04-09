@@ -1940,6 +1940,11 @@ video {
   border-color: rgba(243, 244, 237, var(--tw-divide-opacity));
 }
 
+.divide-backblack > :not([hidden]) ~ :not([hidden]){
+  --tw-divide-opacity: 1;
+  border-color: rgba(25, 26, 28, var(--tw-divide-opacity));
+}
+
 .divide-solid > :not([hidden]) ~ :not([hidden]){
   border-style: solid;
 }
@@ -2561,6 +2566,11 @@ video {
   background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
 }
 
+.bg-backblack{
+  --tw-bg-opacity: 1;
+  background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+}
+
 .group:hover .group-hover\:bg-transparent{
   background-color: transparent;
 }
@@ -2997,6 +3007,11 @@ video {
 .group:hover .group-hover\:bg-darkwhite{
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+}
+
+.group:hover .group-hover\:bg-backblack{
+  --tw-bg-opacity: 1;
+  background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
 }
 
 .focus-within\:bg-transparent:focus-within{
@@ -3437,6 +3452,11 @@ video {
   background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
 }
 
+.focus-within\:bg-backblack:focus-within{
+  --tw-bg-opacity: 1;
+  background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+}
+
 .hover\:bg-transparent:hover{
   background-color: transparent;
 }
@@ -3875,6 +3895,11 @@ video {
   background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
 }
 
+.hover\:bg-backblack:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+}
+
 .focus\:bg-transparent:focus{
   background-color: transparent;
 }
@@ -4311,6 +4336,11 @@ video {
 .focus\:bg-darkwhite:focus{
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+}
+
+.focus\:bg-backblack:focus{
+  --tw-bg-opacity: 1;
+  background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
 }
 
 .bg-none{
@@ -4789,6 +4819,11 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
 }
 
+.from-backblack{
+  --tw-gradient-from: #191a1c;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+}
+
 .via-transparent{
   --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
 }
@@ -5141,6 +5176,10 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
 }
 
+.via-backblack{
+  --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+}
+
 .to-transparent{
   --tw-gradient-to: transparent;
 }
@@ -5491,6 +5530,10 @@ video {
 
 .to-darkwhite{
   --tw-gradient-to: #f3f4ed;
+}
+
+.to-backblack{
+  --tw-gradient-to: #191a1c;
 }
 
 .hover\:from-transparent:hover{
@@ -5933,6 +5976,11 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
 }
 
+.hover\:from-backblack:hover{
+  --tw-gradient-from: #191a1c;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+}
+
 .hover\:via-transparent:hover{
   --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
 }
@@ -6285,6 +6333,10 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
 }
 
+.hover\:via-backblack:hover{
+  --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+}
+
 .hover\:to-transparent:hover{
   --tw-gradient-to: transparent;
 }
@@ -6635,6 +6687,10 @@ video {
 
 .hover\:to-darkwhite:hover{
   --tw-gradient-to: #f3f4ed;
+}
+
+.hover\:to-backblack:hover{
+  --tw-gradient-to: #191a1c;
 }
 
 .focus\:from-transparent:focus{
@@ -7077,6 +7133,11 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
 }
 
+.focus\:from-backblack:focus{
+  --tw-gradient-from: #191a1c;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+}
+
 .focus\:via-transparent:focus{
   --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
 }
@@ -7429,6 +7490,10 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
 }
 
+.focus\:via-backblack:focus{
+  --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+}
+
 .focus\:to-transparent:focus{
   --tw-gradient-to: transparent;
 }
@@ -7779,6 +7844,10 @@ video {
 
 .focus\:to-darkwhite:focus{
   --tw-gradient-to: #f3f4ed;
+}
+
+.focus\:to-backblack:focus{
+  --tw-gradient-to: #191a1c;
 }
 
 .bg-opacity-0{
@@ -8599,6 +8668,11 @@ video {
   border-color: rgba(243, 244, 237, var(--tw-border-opacity));
 }
 
+.border-backblack{
+  --tw-border-opacity: 1;
+  border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+}
+
 .group:hover .group-hover\:border-transparent{
   border-color: transparent;
 }
@@ -9035,6 +9109,11 @@ video {
 .group:hover .group-hover\:border-darkwhite{
   --tw-border-opacity: 1;
   border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+}
+
+.group:hover .group-hover\:border-backblack{
+  --tw-border-opacity: 1;
+  border-color: rgba(25, 26, 28, var(--tw-border-opacity));
 }
 
 .focus-within\:border-transparent:focus-within{
@@ -9475,6 +9554,11 @@ video {
   border-color: rgba(243, 244, 237, var(--tw-border-opacity));
 }
 
+.focus-within\:border-backblack:focus-within{
+  --tw-border-opacity: 1;
+  border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+}
+
 .hover\:border-transparent:hover{
   border-color: transparent;
 }
@@ -9913,6 +9997,11 @@ video {
   border-color: rgba(243, 244, 237, var(--tw-border-opacity));
 }
 
+.hover\:border-backblack:hover{
+  --tw-border-opacity: 1;
+  border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+}
+
 .focus\:border-transparent:focus{
   border-color: transparent;
 }
@@ -10349,6 +10438,11 @@ video {
 .focus\:border-darkwhite:focus{
   --tw-border-opacity: 1;
   border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+}
+
+.focus\:border-backblack:focus{
+  --tw-border-opacity: 1;
+  border-color: rgba(25, 26, 28, var(--tw-border-opacity));
 }
 
 .border-opacity-0{
@@ -17310,6 +17404,21 @@ video {
   color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
 }
 
+.placeholder-backblack::-webkit-input-placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+}
+
+.placeholder-backblack:-ms-input-placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+}
+
+.placeholder-backblack::placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+}
+
 .focus\:placeholder-transparent:focus::-webkit-input-placeholder{
   color: transparent;
 }
@@ -18622,6 +18731,21 @@ video {
 .focus\:placeholder-darkwhite:focus::placeholder{
   --tw-placeholder-opacity: 1;
   color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
+}
+
+.focus\:placeholder-backblack:focus::-webkit-input-placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+}
+
+.focus\:placeholder-backblack:focus:-ms-input-placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+}
+
+.focus\:placeholder-backblack:focus::placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
 }
 
 .placeholder-opacity-0::-webkit-input-placeholder{
@@ -22519,6 +22643,10 @@ video {
   --tw-ring-offset-color: #f3f4ed;
 }
 
+.ring-offset-backblack{
+  --tw-ring-offset-color: #191a1c;
+}
+
 .focus-within\:ring-offset-transparent:focus-within{
   --tw-ring-offset-color: transparent;
 }
@@ -22871,6 +22999,10 @@ video {
   --tw-ring-offset-color: #f3f4ed;
 }
 
+.focus-within\:ring-offset-backblack:focus-within{
+  --tw-ring-offset-color: #191a1c;
+}
+
 .focus\:ring-offset-transparent:focus{
   --tw-ring-offset-color: transparent;
 }
@@ -23221,6 +23353,10 @@ video {
 
 .focus\:ring-offset-darkwhite:focus{
   --tw-ring-offset-color: #f3f4ed;
+}
+
+.focus\:ring-offset-backblack:focus{
+  --tw-ring-offset-color: #191a1c;
 }
 
 .ring-offset-0{
@@ -23721,6 +23857,11 @@ video {
   --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
 }
 
+.ring-backblack{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+}
+
 .focus-within\:ring-transparent:focus-within{
   --tw-ring-color: transparent;
 }
@@ -24159,6 +24300,11 @@ video {
   --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
 }
 
+.focus-within\:ring-backblack:focus-within{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+}
+
 .focus\:ring-transparent:focus{
   --tw-ring-color: transparent;
 }
@@ -24595,6 +24741,11 @@ video {
 .focus\:ring-darkwhite:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
+}
+
+.focus\:ring-backblack:focus{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
 }
 
 .ring-opacity-0{
@@ -25259,6 +25410,11 @@ video {
   color: rgba(243, 244, 237, var(--tw-text-opacity));
 }
 
+.text-backblack{
+  --tw-text-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:text-transparent{
   color: transparent;
 }
@@ -25695,6 +25851,11 @@ video {
 .group:hover .group-hover\:text-darkwhite{
   --tw-text-opacity: 1;
   color: rgba(243, 244, 237, var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-backblack{
+  --tw-text-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-text-opacity));
 }
 
 .focus-within\:text-transparent:focus-within{
@@ -26135,6 +26296,11 @@ video {
   color: rgba(243, 244, 237, var(--tw-text-opacity));
 }
 
+.focus-within\:text-backblack:focus-within{
+  --tw-text-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-text-opacity));
+}
+
 .hover\:text-transparent:hover{
   color: transparent;
 }
@@ -26573,6 +26739,11 @@ video {
   color: rgba(243, 244, 237, var(--tw-text-opacity));
 }
 
+.hover\:text-backblack:hover{
+  --tw-text-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-text-opacity));
+}
+
 .focus\:text-transparent:focus{
   color: transparent;
 }
@@ -27009,6 +27180,11 @@ video {
 .focus\:text-darkwhite:focus{
   --tw-text-opacity: 1;
   color: rgba(243, 244, 237, var(--tw-text-opacity));
+}
+
+.focus\:text-backblack:focus{
+  --tw-text-opacity: 1;
+  color: rgba(25, 26, 28, var(--tw-text-opacity));
 }
 
 .text-opacity-0{
@@ -33544,6 +33720,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-divide-opacity));
   }
 
+  .sm\:divide-backblack > :not([hidden]) ~ :not([hidden]){
+    --tw-divide-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-divide-opacity));
+  }
+
   .sm\:divide-solid > :not([hidden]) ~ :not([hidden]){
     border-style: solid;
   }
@@ -34165,6 +34346,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .sm\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .group:hover .sm\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -34601,6 +34787,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .sm\:group-hover\:bg-darkwhite{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .sm\:focus-within\:bg-transparent:focus-within{
@@ -35041,6 +35232,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .sm\:focus-within\:bg-backblack:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .sm\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -35479,6 +35675,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .sm\:hover\:bg-backblack:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .sm\:focus\:bg-transparent:focus{
     background-color: transparent;
   }
@@ -35915,6 +36116,11 @@ a[href^="https://maps.google.com/maps"]{
   .sm\:focus\:bg-darkwhite:focus{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .sm\:focus\:bg-backblack:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .sm\:bg-none{
@@ -36393,6 +36599,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .sm\:from-backblack{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .sm\:via-transparent{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -36745,6 +36956,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .sm\:via-backblack{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .sm\:to-transparent{
     --tw-gradient-to: transparent;
   }
@@ -37095,6 +37310,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .sm\:to-darkwhite{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .sm\:to-backblack{
+    --tw-gradient-to: #191a1c;
   }
 
   .sm\:hover\:from-transparent:hover{
@@ -37537,6 +37756,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .sm\:hover\:from-backblack:hover{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .sm\:hover\:via-transparent:hover{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -37889,6 +38113,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .sm\:hover\:via-backblack:hover{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .sm\:hover\:to-transparent:hover{
     --tw-gradient-to: transparent;
   }
@@ -38239,6 +38467,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .sm\:hover\:to-darkwhite:hover{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .sm\:hover\:to-backblack:hover{
+    --tw-gradient-to: #191a1c;
   }
 
   .sm\:focus\:from-transparent:focus{
@@ -38681,6 +38913,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .sm\:focus\:from-backblack:focus{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .sm\:focus\:via-transparent:focus{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -39033,6 +39270,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .sm\:focus\:via-backblack:focus{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .sm\:focus\:to-transparent:focus{
     --tw-gradient-to: transparent;
   }
@@ -39383,6 +39624,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .sm\:focus\:to-darkwhite:focus{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .sm\:focus\:to-backblack:focus{
+    --tw-gradient-to: #191a1c;
   }
 
   .sm\:bg-opacity-0{
@@ -40203,6 +40448,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .sm\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .group:hover .sm\:group-hover\:border-transparent{
     border-color: transparent;
   }
@@ -40639,6 +40889,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .sm\:group-hover\:border-darkwhite{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .sm\:focus-within\:border-transparent:focus-within{
@@ -41079,6 +41334,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .sm\:focus-within\:border-backblack:focus-within{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .sm\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -41517,6 +41777,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .sm\:hover\:border-backblack:hover{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .sm\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -41953,6 +42218,11 @@ a[href^="https://maps.google.com/maps"]{
   .sm\:focus\:border-darkwhite:focus{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .sm\:focus\:border-backblack:focus{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .sm\:border-opacity-0{
@@ -48904,6 +49174,21 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
   }
 
+  .sm\:placeholder-backblack::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .sm\:placeholder-backblack:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .sm\:placeholder-backblack::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
   .sm\:focus\:placeholder-transparent:focus::-webkit-input-placeholder{
     color: transparent;
   }
@@ -50216,6 +50501,21 @@ a[href^="https://maps.google.com/maps"]{
   .sm\:focus\:placeholder-darkwhite:focus::placeholder{
     --tw-placeholder-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
+  }
+
+  .sm\:focus\:placeholder-backblack:focus::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .sm\:focus\:placeholder-backblack:focus:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .sm\:focus\:placeholder-backblack:focus::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
   }
 
   .sm\:placeholder-opacity-0::-webkit-input-placeholder{
@@ -54100,6 +54400,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .sm\:ring-offset-backblack{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .sm\:focus-within\:ring-offset-transparent:focus-within{
     --tw-ring-offset-color: transparent;
   }
@@ -54452,6 +54756,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .sm\:focus-within\:ring-offset-backblack:focus-within{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .sm\:focus\:ring-offset-transparent:focus{
     --tw-ring-offset-color: transparent;
   }
@@ -54802,6 +55110,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .sm\:focus\:ring-offset-darkwhite:focus{
     --tw-ring-offset-color: #f3f4ed;
+  }
+
+  .sm\:focus\:ring-offset-backblack:focus{
+    --tw-ring-offset-color: #191a1c;
   }
 
   .sm\:ring-offset-0{
@@ -55302,6 +55614,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .sm\:ring-backblack{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .sm\:focus-within\:ring-transparent:focus-within{
     --tw-ring-color: transparent;
   }
@@ -55740,6 +56057,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .sm\:focus-within\:ring-backblack:focus-within{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .sm\:focus\:ring-transparent:focus{
     --tw-ring-color: transparent;
   }
@@ -56176,6 +56498,11 @@ a[href^="https://maps.google.com/maps"]{
   .sm\:focus\:ring-darkwhite:focus{
     --tw-ring-opacity: 1;
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
+  }
+
+  .sm\:focus\:ring-backblack:focus{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
   }
 
   .sm\:ring-opacity-0{
@@ -56840,6 +57167,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .sm\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .group:hover .sm\:group-hover\:text-transparent{
     color: transparent;
   }
@@ -57276,6 +57608,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .sm\:group-hover\:text-darkwhite{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .group:hover .sm\:group-hover\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .sm\:focus-within\:text-transparent:focus-within{
@@ -57716,6 +58053,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .sm\:focus-within\:text-backblack:focus-within{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .sm\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -58154,6 +58496,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .sm\:hover\:text-backblack:hover{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .sm\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -58590,6 +58937,11 @@ a[href^="https://maps.google.com/maps"]{
   .sm\:focus\:text-darkwhite:focus{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .sm\:focus\:text-backblack:focus{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .sm\:text-opacity-0{
@@ -64845,6 +65197,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-divide-opacity));
   }
 
+  .md\:divide-backblack > :not([hidden]) ~ :not([hidden]){
+    --tw-divide-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-divide-opacity));
+  }
+
   .md\:divide-solid > :not([hidden]) ~ :not([hidden]){
     border-style: solid;
   }
@@ -65466,6 +65823,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .md\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .group:hover .md\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -65902,6 +66264,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .md\:group-hover\:bg-darkwhite{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .md\:focus-within\:bg-transparent:focus-within{
@@ -66342,6 +66709,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .md\:focus-within\:bg-backblack:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .md\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -66780,6 +67152,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .md\:hover\:bg-backblack:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .md\:focus\:bg-transparent:focus{
     background-color: transparent;
   }
@@ -67216,6 +67593,11 @@ a[href^="https://maps.google.com/maps"]{
   .md\:focus\:bg-darkwhite:focus{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .md\:focus\:bg-backblack:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .md\:bg-none{
@@ -67694,6 +68076,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .md\:from-backblack{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .md\:via-transparent{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -68046,6 +68433,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .md\:via-backblack{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .md\:to-transparent{
     --tw-gradient-to: transparent;
   }
@@ -68396,6 +68787,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .md\:to-darkwhite{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .md\:to-backblack{
+    --tw-gradient-to: #191a1c;
   }
 
   .md\:hover\:from-transparent:hover{
@@ -68838,6 +69233,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .md\:hover\:from-backblack:hover{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .md\:hover\:via-transparent:hover{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -69190,6 +69590,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .md\:hover\:via-backblack:hover{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .md\:hover\:to-transparent:hover{
     --tw-gradient-to: transparent;
   }
@@ -69540,6 +69944,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .md\:hover\:to-darkwhite:hover{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .md\:hover\:to-backblack:hover{
+    --tw-gradient-to: #191a1c;
   }
 
   .md\:focus\:from-transparent:focus{
@@ -69982,6 +70390,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .md\:focus\:from-backblack:focus{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .md\:focus\:via-transparent:focus{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -70334,6 +70747,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .md\:focus\:via-backblack:focus{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .md\:focus\:to-transparent:focus{
     --tw-gradient-to: transparent;
   }
@@ -70684,6 +71101,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .md\:focus\:to-darkwhite:focus{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .md\:focus\:to-backblack:focus{
+    --tw-gradient-to: #191a1c;
   }
 
   .md\:bg-opacity-0{
@@ -71504,6 +71925,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .md\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .group:hover .md\:group-hover\:border-transparent{
     border-color: transparent;
   }
@@ -71940,6 +72366,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .md\:group-hover\:border-darkwhite{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .group:hover .md\:group-hover\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .md\:focus-within\:border-transparent:focus-within{
@@ -72380,6 +72811,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .md\:focus-within\:border-backblack:focus-within{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .md\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -72818,6 +73254,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .md\:hover\:border-backblack:hover{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .md\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -73254,6 +73695,11 @@ a[href^="https://maps.google.com/maps"]{
   .md\:focus\:border-darkwhite:focus{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .md\:focus\:border-backblack:focus{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .md\:border-opacity-0{
@@ -80205,6 +80651,21 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
   }
 
+  .md\:placeholder-backblack::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .md\:placeholder-backblack:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .md\:placeholder-backblack::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
   .md\:focus\:placeholder-transparent:focus::-webkit-input-placeholder{
     color: transparent;
   }
@@ -81517,6 +81978,21 @@ a[href^="https://maps.google.com/maps"]{
   .md\:focus\:placeholder-darkwhite:focus::placeholder{
     --tw-placeholder-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
+  }
+
+  .md\:focus\:placeholder-backblack:focus::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .md\:focus\:placeholder-backblack:focus:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .md\:focus\:placeholder-backblack:focus::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
   }
 
   .md\:placeholder-opacity-0::-webkit-input-placeholder{
@@ -85401,6 +85877,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .md\:ring-offset-backblack{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .md\:focus-within\:ring-offset-transparent:focus-within{
     --tw-ring-offset-color: transparent;
   }
@@ -85753,6 +86233,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .md\:focus-within\:ring-offset-backblack:focus-within{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .md\:focus\:ring-offset-transparent:focus{
     --tw-ring-offset-color: transparent;
   }
@@ -86103,6 +86587,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .md\:focus\:ring-offset-darkwhite:focus{
     --tw-ring-offset-color: #f3f4ed;
+  }
+
+  .md\:focus\:ring-offset-backblack:focus{
+    --tw-ring-offset-color: #191a1c;
   }
 
   .md\:ring-offset-0{
@@ -86603,6 +87091,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .md\:ring-backblack{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .md\:focus-within\:ring-transparent:focus-within{
     --tw-ring-color: transparent;
   }
@@ -87041,6 +87534,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .md\:focus-within\:ring-backblack:focus-within{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .md\:focus\:ring-transparent:focus{
     --tw-ring-color: transparent;
   }
@@ -87477,6 +87975,11 @@ a[href^="https://maps.google.com/maps"]{
   .md\:focus\:ring-darkwhite:focus{
     --tw-ring-opacity: 1;
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
+  }
+
+  .md\:focus\:ring-backblack:focus{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
   }
 
   .md\:ring-opacity-0{
@@ -88141,6 +88644,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .md\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .group:hover .md\:group-hover\:text-transparent{
     color: transparent;
   }
@@ -88577,6 +89085,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .md\:group-hover\:text-darkwhite{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .group:hover .md\:group-hover\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .md\:focus-within\:text-transparent:focus-within{
@@ -89017,6 +89530,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .md\:focus-within\:text-backblack:focus-within{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .md\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -89455,6 +89973,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .md\:hover\:text-backblack:hover{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .md\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -89891,6 +90414,11 @@ a[href^="https://maps.google.com/maps"]{
   .md\:focus\:text-darkwhite:focus{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .md\:focus\:text-backblack:focus{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .md\:text-opacity-0{
@@ -96146,6 +96674,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-divide-opacity));
   }
 
+  .lg\:divide-backblack > :not([hidden]) ~ :not([hidden]){
+    --tw-divide-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-divide-opacity));
+  }
+
   .lg\:divide-solid > :not([hidden]) ~ :not([hidden]){
     border-style: solid;
   }
@@ -96767,6 +97300,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .lg\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .group:hover .lg\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -97203,6 +97741,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .lg\:group-hover\:bg-darkwhite{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .lg\:focus-within\:bg-transparent:focus-within{
@@ -97643,6 +98186,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .lg\:focus-within\:bg-backblack:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -98081,6 +98629,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-backblack:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .lg\:focus\:bg-transparent:focus{
     background-color: transparent;
   }
@@ -98517,6 +99070,11 @@ a[href^="https://maps.google.com/maps"]{
   .lg\:focus\:bg-darkwhite:focus{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .lg\:focus\:bg-backblack:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .lg\:bg-none{
@@ -98995,6 +99553,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .lg\:from-backblack{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .lg\:via-transparent{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -99347,6 +99910,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .lg\:via-backblack{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .lg\:to-transparent{
     --tw-gradient-to: transparent;
   }
@@ -99697,6 +100264,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .lg\:to-darkwhite{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .lg\:to-backblack{
+    --tw-gradient-to: #191a1c;
   }
 
   .lg\:hover\:from-transparent:hover{
@@ -100139,6 +100710,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .lg\:hover\:from-backblack:hover{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .lg\:hover\:via-transparent:hover{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -100491,6 +101067,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .lg\:hover\:via-backblack:hover{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .lg\:hover\:to-transparent:hover{
     --tw-gradient-to: transparent;
   }
@@ -100841,6 +101421,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .lg\:hover\:to-darkwhite:hover{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .lg\:hover\:to-backblack:hover{
+    --tw-gradient-to: #191a1c;
   }
 
   .lg\:focus\:from-transparent:focus{
@@ -101283,6 +101867,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .lg\:focus\:from-backblack:focus{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .lg\:focus\:via-transparent:focus{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -101635,6 +102224,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .lg\:focus\:via-backblack:focus{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .lg\:focus\:to-transparent:focus{
     --tw-gradient-to: transparent;
   }
@@ -101985,6 +102578,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .lg\:focus\:to-darkwhite:focus{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .lg\:focus\:to-backblack:focus{
+    --tw-gradient-to: #191a1c;
   }
 
   .lg\:bg-opacity-0{
@@ -102805,6 +103402,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .lg\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .group:hover .lg\:group-hover\:border-transparent{
     border-color: transparent;
   }
@@ -103241,6 +103843,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .lg\:group-hover\:border-darkwhite{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .lg\:focus-within\:border-transparent:focus-within{
@@ -103681,6 +104288,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .lg\:focus-within\:border-backblack:focus-within{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .lg\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -104119,6 +104731,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .lg\:hover\:border-backblack:hover{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .lg\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -104555,6 +105172,11 @@ a[href^="https://maps.google.com/maps"]{
   .lg\:focus\:border-darkwhite:focus{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .lg\:focus\:border-backblack:focus{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .lg\:border-opacity-0{
@@ -111506,6 +112128,21 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
   }
 
+  .lg\:placeholder-backblack::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .lg\:placeholder-backblack:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .lg\:placeholder-backblack::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
   .lg\:focus\:placeholder-transparent:focus::-webkit-input-placeholder{
     color: transparent;
   }
@@ -112818,6 +113455,21 @@ a[href^="https://maps.google.com/maps"]{
   .lg\:focus\:placeholder-darkwhite:focus::placeholder{
     --tw-placeholder-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
+  }
+
+  .lg\:focus\:placeholder-backblack:focus::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .lg\:focus\:placeholder-backblack:focus:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .lg\:focus\:placeholder-backblack:focus::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
   }
 
   .lg\:placeholder-opacity-0::-webkit-input-placeholder{
@@ -116702,6 +117354,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .lg\:ring-offset-backblack{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .lg\:focus-within\:ring-offset-transparent:focus-within{
     --tw-ring-offset-color: transparent;
   }
@@ -117054,6 +117710,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .lg\:focus-within\:ring-offset-backblack:focus-within{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .lg\:focus\:ring-offset-transparent:focus{
     --tw-ring-offset-color: transparent;
   }
@@ -117404,6 +118064,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .lg\:focus\:ring-offset-darkwhite:focus{
     --tw-ring-offset-color: #f3f4ed;
+  }
+
+  .lg\:focus\:ring-offset-backblack:focus{
+    --tw-ring-offset-color: #191a1c;
   }
 
   .lg\:ring-offset-0{
@@ -117904,6 +118568,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .lg\:ring-backblack{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .lg\:focus-within\:ring-transparent:focus-within{
     --tw-ring-color: transparent;
   }
@@ -118342,6 +119011,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .lg\:focus-within\:ring-backblack:focus-within{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .lg\:focus\:ring-transparent:focus{
     --tw-ring-color: transparent;
   }
@@ -118778,6 +119452,11 @@ a[href^="https://maps.google.com/maps"]{
   .lg\:focus\:ring-darkwhite:focus{
     --tw-ring-opacity: 1;
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
+  }
+
+  .lg\:focus\:ring-backblack:focus{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
   }
 
   .lg\:ring-opacity-0{
@@ -119442,6 +120121,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .lg\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .group:hover .lg\:group-hover\:text-transparent{
     color: transparent;
   }
@@ -119878,6 +120562,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .lg\:group-hover\:text-darkwhite{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .lg\:focus-within\:text-transparent:focus-within{
@@ -120318,6 +121007,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .lg\:focus-within\:text-backblack:focus-within{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .lg\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -120756,6 +121450,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .lg\:hover\:text-backblack:hover{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .lg\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -121192,6 +121891,11 @@ a[href^="https://maps.google.com/maps"]{
   .lg\:focus\:text-darkwhite:focus{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .lg\:focus\:text-backblack:focus{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .lg\:text-opacity-0{
@@ -127447,6 +128151,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-divide-opacity));
   }
 
+  .xl\:divide-backblack > :not([hidden]) ~ :not([hidden]){
+    --tw-divide-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-divide-opacity));
+  }
+
   .xl\:divide-solid > :not([hidden]) ~ :not([hidden]){
     border-style: solid;
   }
@@ -128068,6 +128777,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .xl\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .group:hover .xl\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -128504,6 +129218,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .xl\:group-hover\:bg-darkwhite{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .xl\:focus-within\:bg-transparent:focus-within{
@@ -128944,6 +129663,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .xl\:focus-within\:bg-backblack:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .xl\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -129382,6 +130106,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .xl\:hover\:bg-backblack:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .xl\:focus\:bg-transparent:focus{
     background-color: transparent;
   }
@@ -129818,6 +130547,11 @@ a[href^="https://maps.google.com/maps"]{
   .xl\:focus\:bg-darkwhite:focus{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .xl\:focus\:bg-backblack:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .xl\:bg-none{
@@ -130296,6 +131030,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .xl\:from-backblack{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .xl\:via-transparent{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -130648,6 +131387,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .xl\:via-backblack{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .xl\:to-transparent{
     --tw-gradient-to: transparent;
   }
@@ -130998,6 +131741,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .xl\:to-darkwhite{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .xl\:to-backblack{
+    --tw-gradient-to: #191a1c;
   }
 
   .xl\:hover\:from-transparent:hover{
@@ -131440,6 +132187,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .xl\:hover\:from-backblack:hover{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .xl\:hover\:via-transparent:hover{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -131792,6 +132544,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .xl\:hover\:via-backblack:hover{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .xl\:hover\:to-transparent:hover{
     --tw-gradient-to: transparent;
   }
@@ -132142,6 +132898,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .xl\:hover\:to-darkwhite:hover{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .xl\:hover\:to-backblack:hover{
+    --tw-gradient-to: #191a1c;
   }
 
   .xl\:focus\:from-transparent:focus{
@@ -132584,6 +133344,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .xl\:focus\:from-backblack:focus{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .xl\:focus\:via-transparent:focus{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -132936,6 +133701,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .xl\:focus\:via-backblack:focus{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .xl\:focus\:to-transparent:focus{
     --tw-gradient-to: transparent;
   }
@@ -133286,6 +134055,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .xl\:focus\:to-darkwhite:focus{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .xl\:focus\:to-backblack:focus{
+    --tw-gradient-to: #191a1c;
   }
 
   .xl\:bg-opacity-0{
@@ -134106,6 +134879,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .xl\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .group:hover .xl\:group-hover\:border-transparent{
     border-color: transparent;
   }
@@ -134542,6 +135320,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .xl\:group-hover\:border-darkwhite{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .xl\:focus-within\:border-transparent:focus-within{
@@ -134982,6 +135765,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .xl\:focus-within\:border-backblack:focus-within{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .xl\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -135420,6 +136208,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .xl\:hover\:border-backblack:hover{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .xl\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -135856,6 +136649,11 @@ a[href^="https://maps.google.com/maps"]{
   .xl\:focus\:border-darkwhite:focus{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .xl\:focus\:border-backblack:focus{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .xl\:border-opacity-0{
@@ -142807,6 +143605,21 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
   }
 
+  .xl\:placeholder-backblack::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .xl\:placeholder-backblack:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .xl\:placeholder-backblack::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
   .xl\:focus\:placeholder-transparent:focus::-webkit-input-placeholder{
     color: transparent;
   }
@@ -144119,6 +144932,21 @@ a[href^="https://maps.google.com/maps"]{
   .xl\:focus\:placeholder-darkwhite:focus::placeholder{
     --tw-placeholder-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
+  }
+
+  .xl\:focus\:placeholder-backblack:focus::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .xl\:focus\:placeholder-backblack:focus:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .xl\:focus\:placeholder-backblack:focus::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
   }
 
   .xl\:placeholder-opacity-0::-webkit-input-placeholder{
@@ -148003,6 +148831,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .xl\:ring-offset-backblack{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .xl\:focus-within\:ring-offset-transparent:focus-within{
     --tw-ring-offset-color: transparent;
   }
@@ -148355,6 +149187,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .xl\:focus-within\:ring-offset-backblack:focus-within{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .xl\:focus\:ring-offset-transparent:focus{
     --tw-ring-offset-color: transparent;
   }
@@ -148705,6 +149541,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .xl\:focus\:ring-offset-darkwhite:focus{
     --tw-ring-offset-color: #f3f4ed;
+  }
+
+  .xl\:focus\:ring-offset-backblack:focus{
+    --tw-ring-offset-color: #191a1c;
   }
 
   .xl\:ring-offset-0{
@@ -149205,6 +150045,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .xl\:ring-backblack{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .xl\:focus-within\:ring-transparent:focus-within{
     --tw-ring-color: transparent;
   }
@@ -149643,6 +150488,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .xl\:focus-within\:ring-backblack:focus-within{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .xl\:focus\:ring-transparent:focus{
     --tw-ring-color: transparent;
   }
@@ -150079,6 +150929,11 @@ a[href^="https://maps.google.com/maps"]{
   .xl\:focus\:ring-darkwhite:focus{
     --tw-ring-opacity: 1;
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
+  }
+
+  .xl\:focus\:ring-backblack:focus{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
   }
 
   .xl\:ring-opacity-0{
@@ -150743,6 +151598,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .xl\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .group:hover .xl\:group-hover\:text-transparent{
     color: transparent;
   }
@@ -151179,6 +152039,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .xl\:group-hover\:text-darkwhite{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .group:hover .xl\:group-hover\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .xl\:focus-within\:text-transparent:focus-within{
@@ -151619,6 +152484,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .xl\:focus-within\:text-backblack:focus-within{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .xl\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -152057,6 +152927,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .xl\:hover\:text-backblack:hover{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .xl\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -152493,6 +153368,11 @@ a[href^="https://maps.google.com/maps"]{
   .xl\:focus\:text-darkwhite:focus{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .xl\:focus\:text-backblack:focus{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .xl\:text-opacity-0{
@@ -158748,6 +159628,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-divide-opacity));
   }
 
+  .\32xl\:divide-backblack > :not([hidden]) ~ :not([hidden]){
+    --tw-divide-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-divide-opacity));
+  }
+
   .\32xl\:divide-solid > :not([hidden]) ~ :not([hidden]){
     border-style: solid;
   }
@@ -159369,6 +160254,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .\32xl\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:bg-transparent{
     background-color: transparent;
   }
@@ -159805,6 +160695,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .\32xl\:group-hover\:bg-darkwhite{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:bg-backblack{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .\32xl\:focus-within\:bg-transparent:focus-within{
@@ -160245,6 +161140,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .\32xl\:focus-within\:bg-backblack:focus-within{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .\32xl\:hover\:bg-transparent:hover{
     background-color: transparent;
   }
@@ -160683,6 +161583,11 @@ a[href^="https://maps.google.com/maps"]{
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
   }
 
+  .\32xl\:hover\:bg-backblack:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
+  }
+
   .\32xl\:focus\:bg-transparent:focus{
     background-color: transparent;
   }
@@ -161119,6 +162024,11 @@ a[href^="https://maps.google.com/maps"]{
   .\32xl\:focus\:bg-darkwhite:focus{
     --tw-bg-opacity: 1;
     background-color: rgba(243, 244, 237, var(--tw-bg-opacity));
+  }
+
+  .\32xl\:focus\:bg-backblack:focus{
+    --tw-bg-opacity: 1;
+    background-color: rgba(25, 26, 28, var(--tw-bg-opacity));
   }
 
   .\32xl\:bg-none{
@@ -161597,6 +162507,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .\32xl\:from-backblack{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .\32xl\:via-transparent{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -161949,6 +162864,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .\32xl\:via-backblack{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .\32xl\:to-transparent{
     --tw-gradient-to: transparent;
   }
@@ -162299,6 +163218,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .\32xl\:to-darkwhite{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .\32xl\:to-backblack{
+    --tw-gradient-to: #191a1c;
   }
 
   .\32xl\:hover\:from-transparent:hover{
@@ -162741,6 +163664,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .\32xl\:hover\:from-backblack:hover{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .\32xl\:hover\:via-transparent:hover{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -163093,6 +164021,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .\32xl\:hover\:via-backblack:hover{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .\32xl\:hover\:to-transparent:hover{
     --tw-gradient-to: transparent;
   }
@@ -163443,6 +164375,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .\32xl\:hover\:to-darkwhite:hover{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .\32xl\:hover\:to-backblack:hover{
+    --tw-gradient-to: #191a1c;
   }
 
   .\32xl\:focus\:from-transparent:focus{
@@ -163885,6 +164821,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .\32xl\:focus\:from-backblack:focus{
+    --tw-gradient-from: #191a1c;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .\32xl\:focus\:via-transparent:focus{
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgba(0, 0, 0, 0));
   }
@@ -164237,6 +165178,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-gradient-stops: var(--tw-gradient-from), #f3f4ed, var(--tw-gradient-to, rgba(243, 244, 237, 0));
   }
 
+  .\32xl\:focus\:via-backblack:focus{
+    --tw-gradient-stops: var(--tw-gradient-from), #191a1c, var(--tw-gradient-to, rgba(25, 26, 28, 0));
+  }
+
   .\32xl\:focus\:to-transparent:focus{
     --tw-gradient-to: transparent;
   }
@@ -164587,6 +165532,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .\32xl\:focus\:to-darkwhite:focus{
     --tw-gradient-to: #f3f4ed;
+  }
+
+  .\32xl\:focus\:to-backblack:focus{
+    --tw-gradient-to: #191a1c;
   }
 
   .\32xl\:bg-opacity-0{
@@ -165407,6 +166356,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .\32xl\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:border-transparent{
     border-color: transparent;
   }
@@ -165843,6 +166797,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .\32xl\:group-hover\:border-darkwhite{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:border-backblack{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .\32xl\:focus-within\:border-transparent:focus-within{
@@ -166283,6 +167242,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .\32xl\:focus-within\:border-backblack:focus-within{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .\32xl\:hover\:border-transparent:hover{
     border-color: transparent;
   }
@@ -166721,6 +167685,11 @@ a[href^="https://maps.google.com/maps"]{
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
   }
 
+  .\32xl\:hover\:border-backblack:hover{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
+  }
+
   .\32xl\:focus\:border-transparent:focus{
     border-color: transparent;
   }
@@ -167157,6 +168126,11 @@ a[href^="https://maps.google.com/maps"]{
   .\32xl\:focus\:border-darkwhite:focus{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 237, var(--tw-border-opacity));
+  }
+
+  .\32xl\:focus\:border-backblack:focus{
+    --tw-border-opacity: 1;
+    border-color: rgba(25, 26, 28, var(--tw-border-opacity));
   }
 
   .\32xl\:border-opacity-0{
@@ -174108,6 +175082,21 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
   }
 
+  .\32xl\:placeholder-backblack::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .\32xl\:placeholder-backblack:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .\32xl\:placeholder-backblack::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
   .\32xl\:focus\:placeholder-transparent:focus::-webkit-input-placeholder{
     color: transparent;
   }
@@ -175420,6 +176409,21 @@ a[href^="https://maps.google.com/maps"]{
   .\32xl\:focus\:placeholder-darkwhite:focus::placeholder{
     --tw-placeholder-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-placeholder-opacity));
+  }
+
+  .\32xl\:focus\:placeholder-backblack:focus::-webkit-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .\32xl\:focus\:placeholder-backblack:focus:-ms-input-placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
+  }
+
+  .\32xl\:focus\:placeholder-backblack:focus::placeholder{
+    --tw-placeholder-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-placeholder-opacity));
   }
 
   .\32xl\:placeholder-opacity-0::-webkit-input-placeholder{
@@ -179304,6 +180308,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .\32xl\:ring-offset-backblack{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .\32xl\:focus-within\:ring-offset-transparent:focus-within{
     --tw-ring-offset-color: transparent;
   }
@@ -179656,6 +180664,10 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-offset-color: #f3f4ed;
   }
 
+  .\32xl\:focus-within\:ring-offset-backblack:focus-within{
+    --tw-ring-offset-color: #191a1c;
+  }
+
   .\32xl\:focus\:ring-offset-transparent:focus{
     --tw-ring-offset-color: transparent;
   }
@@ -180006,6 +181018,10 @@ a[href^="https://maps.google.com/maps"]{
 
   .\32xl\:focus\:ring-offset-darkwhite:focus{
     --tw-ring-offset-color: #f3f4ed;
+  }
+
+  .\32xl\:focus\:ring-offset-backblack:focus{
+    --tw-ring-offset-color: #191a1c;
   }
 
   .\32xl\:ring-offset-0{
@@ -180506,6 +181522,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .\32xl\:ring-backblack{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .\32xl\:focus-within\:ring-transparent:focus-within{
     --tw-ring-color: transparent;
   }
@@ -180944,6 +181965,11 @@ a[href^="https://maps.google.com/maps"]{
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
   }
 
+  .\32xl\:focus-within\:ring-backblack:focus-within{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
+  }
+
   .\32xl\:focus\:ring-transparent:focus{
     --tw-ring-color: transparent;
   }
@@ -181380,6 +182406,11 @@ a[href^="https://maps.google.com/maps"]{
   .\32xl\:focus\:ring-darkwhite:focus{
     --tw-ring-opacity: 1;
     --tw-ring-color: rgba(243, 244, 237, var(--tw-ring-opacity));
+  }
+
+  .\32xl\:focus\:ring-backblack:focus{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(25, 26, 28, var(--tw-ring-opacity));
   }
 
   .\32xl\:ring-opacity-0{
@@ -182044,6 +183075,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .\32xl\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .group:hover .\32xl\:group-hover\:text-transparent{
     color: transparent;
   }
@@ -182480,6 +183516,11 @@ a[href^="https://maps.google.com/maps"]{
   .group:hover .\32xl\:group-hover\:text-darkwhite{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .group:hover .\32xl\:group-hover\:text-backblack{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .\32xl\:focus-within\:text-transparent:focus-within{
@@ -182920,6 +183961,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .\32xl\:focus-within\:text-backblack:focus-within{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .\32xl\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -183358,6 +184404,11 @@ a[href^="https://maps.google.com/maps"]{
     color: rgba(243, 244, 237, var(--tw-text-opacity));
   }
 
+  .\32xl\:hover\:text-backblack:hover{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
+  }
+
   .\32xl\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -183794,6 +184845,11 @@ a[href^="https://maps.google.com/maps"]{
   .\32xl\:focus\:text-darkwhite:focus{
     --tw-text-opacity: 1;
     color: rgba(243, 244, 237, var(--tw-text-opacity));
+  }
+
+  .\32xl\:focus\:text-backblack:focus{
+    --tw-text-opacity: 1;
+    color: rgba(25, 26, 28, var(--tw-text-opacity));
   }
 
   .\32xl\:text-opacity-0{
