@@ -3,7 +3,7 @@ import Comments from './Comments';
 import {fetch_airport_info} from "../api";
 
 const AirportStats = ({icao}) => {
-  const [airport, setAirport] = useState({});
+  const [airport, setAirport] = useState(null);
 
   useEffect(() => {
     fetch_airport_info(icao).then((info) => setAirport(info));
@@ -69,7 +69,9 @@ const AirportStats = ({icao}) => {
             </div>
           </div>
           <div className="w-3/5">
-            <Comments airport_id={airport.id} />
+            {airport &&
+              <Comments airport_id={airport.id} />
+            }
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ const AirportTable = ({airports}) => {
   let airportRows = airports.map((airport) => {
     return (
       <tr className="border">
-        <td className="text-center "><a href={"/airport/" + airport.icao}>{airport.airport_name}</a></td>
+        <td className="text-center "><a className="bg-orange px-2" href={"/airport/" + airport.icao}>{airport.airport_name}</a></td>
         <td className="text-center">{airport.icao}</td>
         <td className="text-center">{Math.round((airport.win_loss + Number.EPSILON) * 100) / 100}</td>
         <td className="text-center">{airport.total}</td>

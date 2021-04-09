@@ -20,7 +20,7 @@ function Comments({session, airport_id}) {
       body: body,
       user_id: session.user_id,
       airport_id: airport_id
-    }).then(res => {
+    }).then(() => {
       get_comments(airport_id).then(res => {
         setComments(res);
       })
