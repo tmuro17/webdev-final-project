@@ -8,8 +8,12 @@ defmodule Backend.Stats do
       [user_id]
     )
 
-    hd hd results.rows
-    # W/L
+    if results.rows == [] do
+      0
+    else
+      # W/L
+      hd hd results.rows
+    end
   end
 
   def airport_win_loss(airport_id) do
@@ -74,8 +78,12 @@ defmodule Backend.Stats do
       [user_id]
     )
 
-    hd hd results.rows
-    # Total guesses as int
+    if results.rows == [] do
+      0
+    else
+      hd hd results.rows
+      # Total guesses as int
+    end
   end
 
   def user_guesses_airports(user_id) do
@@ -105,6 +113,6 @@ defmodule Backend.Stats do
     user_guesses_airports(user_id)
     |> Enum.map(fn {air_id, name, icao, lat, lng} -> {air_id, name, icao, lat, lng, user_airport_win_loss(user_id, air_id)} end)
     |> Enum.sort_by(fn {_, _, _, _, _, wl} -> wl end, :desc)
-     # [{airport_id, name, icao, W/L}]
+    # [{airport_id, name, icao, W/L}]
   end
 end
