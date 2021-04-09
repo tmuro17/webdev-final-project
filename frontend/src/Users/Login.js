@@ -49,7 +49,7 @@ function Login() {
         Email
       </label>
       <input
-       className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+       className="shadow appearance-none border rounded w-full py-2 px-3 text-black"
        type="text"
        value={email}
        onChange={(ev) => setEmail(ev.target.value)}
@@ -60,7 +60,7 @@ function Login() {
         Password
       </label>
       <input
-       className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+       className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-black mb-3"
        type="password"
        value={pass}
        onChange={(ev) => setPass(ev.target.value)}

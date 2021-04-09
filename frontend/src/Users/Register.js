@@ -59,7 +59,7 @@ const Register = () => {
         Name
       </label>
       <input
-      className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-black"
       type="text"
       value={user.name}
       onChange={(ev) => update("name", ev)}
@@ -70,7 +70,7 @@ const Register = () => {
         Email
       </label>
       <input
-      className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-black"
       type="text"
       value={user.email}
       onChange={(ev) => update("email", ev)}
@@ -81,7 +81,7 @@ const Register = () => {
         Password
       </label>
       <input
-      className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+      className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-black mb-3"
       type="password"
       value={user.pass1}
       onChange={(ev) => update("pass1", ev)}
@@ -92,7 +92,7 @@ const Register = () => {
         Confirm Password
       </label>
       <input
-      className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+      className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-black mb-3"
       type="password"
       value={user.pass2}
       onChange={(ev) => update("pass2", ev)}
@@ -100,7 +100,7 @@ const Register = () => {
     </div>
     <ErrorMessage msg={user.pass_msg}/>
     <div className="flex items-center justify-center">
-      <button onClick={handleRegister} disabled={user.pass_msg !== ""} className="bg-orange text-white font-bold py-2 px-4 rounded" type="button">
+      <button onClick={handleRegister} disabled={user.pass_msg !== ""} className="bg-orange text-black font-bold py-2 px-4 rounded" type="button">
         Register
       </button>
     </div>
