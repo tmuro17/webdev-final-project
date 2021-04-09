@@ -27,6 +27,8 @@ defmodule BackendWeb.Router do
      resources "/session", SessionController, only: [:create]
      resources "/airports", AirportController, except: [:new, :edit]
      resources "/guesses", GuessController, except: [:new, :edit]
+     resources "/comments", CommentController, only: [:create, :delete]
+     get "/comments/airport/:id", CommentController, :comments_for_airport
      get "/user_airports_win_losses/:id", StatsController, :user_airports_win_losses
      get "/user_win_loss/:id", StatsController, :user_win_loss
      get "/user_total_guesses/:id", StatsController, :user_total_guesses

@@ -42,7 +42,7 @@ defmodule BackendWeb.StatsController do
     else
       wl = Stats.airport_win_loss(airport.id)
       guesses = Stats.airport_total_guesses(airport.id)
-      {airport.name, airport.icao, wl, guesses}
+      {airport.name, airport.icao, airport.id, wl, guesses}
     end
     render(conn, "airport_info.json", airport: airport)
   end

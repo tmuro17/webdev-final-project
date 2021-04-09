@@ -59,10 +59,11 @@ defmodule BackendWeb.StatsView do
     if(stats == nil) do
       %{}
     else
-      {name, icao, wl, guesses} = stats
+      {name, icao, id, wl, guesses} = stats
       %{
         name: name,
         icao: icao,
+        id: id,
         wl: wl,
         guesses: guesses
       }

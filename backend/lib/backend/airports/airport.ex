@@ -7,6 +7,7 @@ defmodule Backend.Airports.Airport do
     field :name, :string
     field :lat, :float
     field :lng, :float
+    has_many :comments, Backend.Comments.Comment
 
     timestamps()
   end

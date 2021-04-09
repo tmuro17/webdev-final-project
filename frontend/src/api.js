@@ -106,7 +106,14 @@ export const fetch_top_100_users = async () => {
   return await api_get("/top_100");
 };
 
-
 export const load_defaults = () => {
   fetch_users();
+};
+
+export const get_comments = async (id) => {
+  return await api_get(`/comments/airport/${id}`);
+};
+
+export const create_comment = async (data) => {
+  return await api_post("/comments", {comment: data})
 };
