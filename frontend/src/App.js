@@ -12,6 +12,7 @@ import AirportStats from "./Stats/Airport";
 import Leaderboard from "./Stats/Leaderboard";
 import AnnouncementWidget from './Game/AnnouncementWidget';
 import EditUser from "./Users/Edit";
+import HomePage from "./HomePage";
 
 
 const App = () => {
@@ -21,7 +22,7 @@ const App = () => {
         <Nav/>
       <Switch>
         <Route path="/" exact>
-          <div>home</div>
+          <HomePage/>
         </Route>
         {/* private route means you need to be logged in */}
         <PrivateRoute path="/play" exact>
