@@ -5,7 +5,7 @@ server {
     server_name short-final-backend.tmuro17.xyz;
 
     location / {
-        proxy_pass http://localhost:4800;
+        proxy_pass http://localhost:4850;
     }
 
     location /socket {

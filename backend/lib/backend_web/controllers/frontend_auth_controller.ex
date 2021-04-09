@@ -6,7 +6,7 @@ defmodule BackendWeb.FrontendAuthController do
 
     # Frontend should be in list in whitelist of requesting URLs
     # Currently this is only the localhost ip
-    whitelist = [{127, 0, 0, 1}]
+    whitelist = [{127, 0, 0, 1}, {0, 0, 0, 0, 0, 0, 0, 1}]
     valid_ip = Enum.member?(whitelist, request_ip)
 
     if valid_ip do
