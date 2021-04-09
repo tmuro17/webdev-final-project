@@ -10,7 +10,9 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :backend_final, BackendWeb.Endpoint,
-  url: [host: "short-final-backend.tmuro17.xyz", port: 80]
+  url: [host: "short-final-backend.tmuro17.xyz", port: 80],
+  check_origin: ["http://short-final.tmuro17.xyz", "https://short-final.tmuro17.xyz"]
+  # check origin needed to allow the web socket to connect
 
 # Do not print debug messages in production
 config :logger, level: :info
