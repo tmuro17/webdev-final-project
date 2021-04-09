@@ -34,21 +34,24 @@ function AnnouncementWidget({session}) {
 
   const generateMessage = (info, index) => {
     // this is here for easy debugging in case you dont want to login to two users to see announcements while playing
-    if (session.username != info.username) {
-      return (
-        <div className="my-1 p-2 border border-orange bg-darkwhite rounded" key={index}>
-          <span>{info.correct ? "✔️" : "❌"}</span>
-          <span className="font-bold pl-1">
-            {info.username} 
-          </span>
-          <span>
-            {outcomeMessage(info)}
-          </span>
-        </div>
-      )
-    } else {
-      return null;
+    if (session) {
+      if (session.username != info.username) {
+        return (
+          <div className="my-1 p-2 border border-orange bg-darkwhite rounded" key={index}>
+            <span>{info.correct ? "✔️" : "❌"}</span>
+            <span className="font-bold pl-1">
+              {info.username}
+            </span>
+            <span>
+              {outcomeMessage(info)}
+            </span>
+          </div>
+        )
+      } else {
+        return null;
+      }
     }
+    return null;
   }
 
   const messages = announcements.reverse().map(generateMessage);

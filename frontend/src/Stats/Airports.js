@@ -81,11 +81,11 @@ const AirportsStats = () => {
       <h3>Click a row to view airport details.</h3>
       <br/>
       <div className="w-full flex flex-row">
-        <div className="w-1/2">
+        <div className="w-1/2 h-1/3 flex flex-col overflow-auto mr-4">
           <h2 className="text-lg font-bold">25 Hardest:</h2>
           <AirportTable airports={hard25}/>
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 h-1/3 flex flex-col overflow-auto">
           <h2 className="text-lg font-bold">25 Easiest:</h2>
           <AirportTable airports={easy25}/>
         </div>
