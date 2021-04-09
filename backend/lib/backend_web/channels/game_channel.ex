@@ -18,7 +18,7 @@ defmodule BackendWeb.GameChannel do
   def handle_in("user_location", %{"user_id" => user_id, "coordinates" => coordinates}, socket) do
     user = Users.get_user!(user_id)
     airports =
-      ApiAgent.get_airports_in_radius(coordinates, 200)
+      ApiAgent.get_airports_in_radius(coordinates, 500)
       |> Enum.shuffle # set to 200km for now
     socket =
       socket
@@ -32,9 +32,6 @@ defmodule BackendWeb.GameChannel do
     airports = socket.assigns[:unused_airports]
     [correct | rest] = airports
     options = Enum.take(airports, 4)
-
-    # this is temporary for testing so i didnt have to reseed the entire db to get new lat/lngs added...
-    Airports.update_airport(Airports.get_airport_by_icao(correct[:icao]), %{lat: correct[:coordinates][:lat], lng: correct[:coordinates][:lng]})
 
     # insert in db if it isnt already
     if Airports.get_airport_by_icao(correct[:icao]) == nil do
