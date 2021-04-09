@@ -6,6 +6,7 @@ defmodule Backend.Users.User do
     field :email, :string
     field :name, :string
     field :password_hash, :string
+    has_many :comments, Backend.Comments.Comment
 
     timestamps()
   end

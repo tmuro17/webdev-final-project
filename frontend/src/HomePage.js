@@ -24,7 +24,7 @@ const HomePage = () => {
       <button
         className="bg-orange text-white font-bold py-2 px-4 rounded"
         type="button"
-        onClick={(_) => history.push("/play")}
+        onClick={(_) => history.push("/play/regional")}
       >
         Play Original Mode
       </button>

@@ -5,8 +5,8 @@ import {useHistory} from "react-router-dom";
 const AirportTable = ({airports}) => {
   let airportRows = airports.map((airport) => {
     return (
-      <tr>
-        <td className="text-center">{airport.airport_name}</td>
+      <tr className="border">
+        <td className="text-center "><a href={"/airport/" + airport.icao}>{airport.airport_name}</a></td>
         <td className="text-center">{airport.icao}</td>
         <td className="text-center">{Math.round((airport.win_loss + Number.EPSILON) * 100) / 100}</td>
         <td className="text-center">{airport.total}</td>
@@ -72,6 +72,8 @@ const AirportsStats = () => {
           Search
         </button>
       </div>
+      <br/>
+      <h3>Click an airport name to view details.</h3>
       <br/>
       <h2 className="text-lg font-bold">25 Hardest:</h2>
       <AirportTable airports={hard25}/>
