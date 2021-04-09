@@ -3,7 +3,6 @@ import {fetch_airports_easiest_25, fetch_airports_hardest_25} from "../api";
 import {useHistory} from "react-router-dom";
 
 const gotoAirport = (icao, history) => {
-  // 
   history.push('/airport/' + icao)
 }
 
@@ -65,7 +64,7 @@ const AirportsStats = () => {
         <input
           name="icaoSearch"
           id="icaoSearch"
-          className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+          className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
           type="text"
           onChange={(ev) => setIcaoInput(ev.target.value)}
           value={icaoInput}
@@ -81,11 +80,16 @@ const AirportsStats = () => {
       <br/>
       <h3>Click a row to view airport details.</h3>
       <br/>
-      <h2 className="text-lg font-bold">25 Hardest:</h2>
-      <AirportTable airports={hard25}/>
-      <br/>
-      <h2 className="text-lg font-bold">25 Easiest:</h2>
-      <AirportTable airports={easy25}/>
+      <div className="w-full flex flex-row">
+        <div className="w-1/2">
+          <h2 className="text-lg font-bold">25 Hardest:</h2>
+          <AirportTable airports={hard25}/>
+        </div>
+        <div className="w-1/2">
+          <h2 className="text-lg font-bold">25 Easiest:</h2>
+          <AirportTable airports={easy25}/>
+        </div>
+      </div>
     </div>
   );
 };

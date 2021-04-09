@@ -25,7 +25,7 @@ const AirportStats = ({icao}) => {
               <input
                 name="name"
                 id="name"
-                className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+                className="shadow appearance-none border rounded w-2/3 py-2 px-3 text-black"
                 type="text"
                 value={airport.name}
                 readOnly
@@ -38,7 +38,7 @@ const AirportStats = ({icao}) => {
               <input
                 name="ICAO"
                 id="ICAO"
-                className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+                className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
                 type="text"
                 value={airport.icao}
                 readOnly/>
@@ -50,7 +50,7 @@ const AirportStats = ({icao}) => {
               <input
                 name="wl"
                 id="wl"
-                className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+                className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
                 type="text"
                 value={`${Math.round((airport.wl + Number.EPSILON) * 100) / 100}%`}
                 readOnly/>
@@ -62,7 +62,7 @@ const AirportStats = ({icao}) => {
               <input
                 name="guesses"
                 id="guesses"
-                className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+                className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
                 type="text"
                 value={airport.guesses}
                 readOnly/>

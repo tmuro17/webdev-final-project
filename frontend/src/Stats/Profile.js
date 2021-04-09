@@ -4,11 +4,16 @@ import {fetch_user, fetch_user_airport_win_losses, fetch_user_total_guesses, fet
 import StatsMap from './StatsMap';
 import {useHistory} from "react-router-dom";
 
+const gotoAirport = (icao, history) => {
+  history.push('/airport/' + icao)
+}
+
 const AirportWinLosses = ({details}) => {
+  let history = useHistory();
   let detailRows = details.map((detail, index) => {
     console.log(detail);
     return (
-      <tr key={index} className="border">
+      <tr key={index} onClick={e => gotoAirport(detail.icao, history)} className="border hover:bg-darkwhite hover:text-black cursor-pointer">
         <td className="text-center">{detail.airport_name}</td>
         <td className="text-center">{detail.icao}</td>
         <td className="text-center">{Math.round((detail.wl_ratio + Number.EPSILON) * 100) / 100}</td>
@@ -18,7 +23,8 @@ const AirportWinLosses = ({details}) => {
 
 
   return (
-    <table className="table-auto">
+    <div className="overflow-auto h-1/4">
+<table className="table-auto">
       <thead>
       <tr>
         <th className="w-1/2">Airport Name</th>
@@ -30,6 +36,8 @@ const AirportWinLosses = ({details}) => {
       {detailRows}
       </tbody>
     </table>
+    </div>
+    
   );
 };
 
@@ -43,6 +51,8 @@ const Profile = ({session}) => {
 
   useEffect(() => {
     fetch_user(user_id).then((u) => setUser(u));
+    console.log(user)
+    document.body.style.overflow = 'hidden';
   }, [user_id]);
 
   useEffect(() => {
@@ -56,6 +66,7 @@ const Profile = ({session}) => {
   useEffect(() => {
     fetch_user_total_guesses(user_id).then((num_guesses) => setTotalGuesses(num_guesses));
   }, [user_id]);
+  
 
   return (
     <div className="flex flex-row">
@@ -64,26 +75,26 @@ const Profile = ({session}) => {
         <br/>
         <div className="space-y-5">
           <div>
-            <label className="block text-md font-bold mb-2" htmlFor="name">
+            <label className="block text-md font-bold mb-1" htmlFor="name">
               Name
             </label>
             <input
               name="name"
               id="name"
-              className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+              className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
               type="text"
               value={user.name}
               readOnly
             />
           </div>
           <div>
-            <label className="block text-md font-bold mb-2" htmlFor="email">
+            <label className="block text-md font-bold mb-1" htmlFor="email">
               Email
             </label>
             <input
               name="email"
               id="email"
-              className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+              className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
               type="email"
               value={user.email}
               readOnly/>
@@ -98,30 +109,29 @@ const Profile = ({session}) => {
 
         </div>
         <br/>
-        <br/>
         <h2 className="text-lg font-bold">Stats:</h2>
         <br/>
         <div className="space-y-5">
           <div>
-            <label className="block text-md font-bold mb-2" htmlFor="globalWinLoss">
+            <label className="block text-md font-bold mb-1" htmlFor="globalWinLoss">
               Win/Loss Percentage
             </label>
             <input
               name="globalWinLoss"
               id="globalWinLoss"
-              className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+              className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
               type="text"
               value={`${Math.round((globalWinLoss.win_loss + Number.EPSILON) * 100) / 100}%`}
               readOnly/>
           </div>
           <div>
-            <label className="block text-md font-bold mb-2" htmlFor="totalGuesses">
+            <label className="block text-md font-bold mb-1" htmlFor="totalGuesses">
               Total Guesses
             </label>
             <input
               name="totalGuesses"
               id="totalGuesses"
-              className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+              className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
               type="text"
               value={totalGuesses.total_guesses}
               readOnly/>

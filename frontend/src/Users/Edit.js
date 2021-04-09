@@ -44,7 +44,7 @@ const EditUser = ({session}) => {
             <input
               name="name"
               id="name"
-              className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+              className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
               type="text"
               value={name}
               onChange={(ev) => setName(ev.target.value)}
@@ -57,7 +57,7 @@ const EditUser = ({session}) => {
             <input
               name="email"
               id="email"
-              className="shadow appearance-none border rounded w-100 py-2 px-3 text-grey-darker"
+              className="shadow appearance-none border rounded w-100 py-2 px-3 text-black"
               type="email"
               value={email}
               onChange={(ev) => setEmail(ev.target.value)}
