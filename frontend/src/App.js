@@ -11,6 +11,7 @@ import AirportsStats from "./Stats/Airports";
 import AirportStats from "./Stats/Airport";
 import Leaderboard from "./Stats/Leaderboard";
 import AnnouncementWidget from './Game/AnnouncementWidget';
+import EditUser from "./Users/Edit";
 
 
 const App = () => {
@@ -51,6 +52,9 @@ const App = () => {
           <UserList/> 
           {/* // for debugging */}
         </Route>
+        <PrivateRoute path="/edit_user" exact>
+          <EditUser/>
+        </PrivateRoute>
       </Switch>
       </div>
       <PhoenixSocketProvider>

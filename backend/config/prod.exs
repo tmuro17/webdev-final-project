@@ -11,8 +11,13 @@ use Mix.Config
 # before starting your production server.
 config :backend_final, BackendWeb.Endpoint,
   url: [host: "short-final-backend.tmuro17.xyz", port: 80],
-  check_origin: ["http://short-final.tmuro17.xyz", "https://short-final.tmuro17.xyz"]
-  # check origin needed to allow the web socket to connect
+  check_origin: false
+
+config :cors_plug,
+       origin: ["https://short-final.tmuro17.xyz"],
+       max_age: 86400,
+       methods: ["GET", "POST", "PATCH", "DELETE"],
+       headers: ["x-auth", "Content-Type"]
 
 # Do not print debug messages in production
 config :logger, level: :info
