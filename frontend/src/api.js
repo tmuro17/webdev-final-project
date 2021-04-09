@@ -53,6 +53,27 @@ export const api_login = (email, password) => {
   });
 };
 
+export const api_update_user = async user => {
+  let state = store.getState();
+  let token = state?.session?.token;
+
+  let data = new FormData();
+  data.append("user[id]", user.id);
+  data.append("user[name]", user.name);
+  data.append("user[email]", user.email);
+
+  let opts = {
+    method: "PATCH",
+    body: data,
+    headers: {
+      "x-auth": token,
+    }
+  };
+
+  let response = await fetch(`https://short-final-backend.tmuro17.xyz/api/v1/users/${user.id}`, opts)
+  return await response.json()
+};
+
 export const fetch_user = async id => {
   return await api_get(`/users/${id}`);
 };
