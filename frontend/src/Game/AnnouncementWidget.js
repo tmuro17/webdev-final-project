@@ -36,7 +36,6 @@ function AnnouncementWidget({session}) {
     // this is here for easy debugging in case you dont want to login to two users to see announcements while playing
     if (true) {
     // if (session.username != info.username) {
-      console.log('no match')
       return (
         <div className="my-1 p-2 border border-orange bg-darkwhite rounded" key={index}>
           <span>{info.correct ? "✔️" : "❌"}</span>
@@ -59,7 +58,7 @@ function AnnouncementWidget({session}) {
     return (
       <div className="fixed right-32 bottom-1/5 border-orange border-4 bg-lightgray p-2 rounded h-1/5 w-1/5 shadow-xl text-xs">
         <div className="font-bold">Live</div>
-        <div className="flex flex-col overflow-auto h-4/5">
+        <div id="announcements" className="flex flex-col overflow-auto h-4/5">
           {messages}
         </div>
       </div>

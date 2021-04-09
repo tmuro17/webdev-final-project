@@ -7,10 +7,11 @@ export const api_get = async path => {
   return resp.data;
 };
 
-export const api_post = async (path, data) => {
+export const api_post = async (path, data, headers = {}) => {
   let options = {
     method: "POST",
     headers: {
+      ...headers,
       "Content-Type": "application/json"
     },
     body: JSON.stringify(data),
@@ -115,5 +116,7 @@ export const get_comments = async (id) => {
 };
 
 export const create_comment = async (data) => {
-  return await api_post("/comments", {comment: data})
+  let state = store.getState();
+  let token = state?.session?.token;
+  return await api_post("/comments", {comment: data}, {"x-auth": token});
 };
