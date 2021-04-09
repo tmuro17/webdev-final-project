@@ -6,7 +6,8 @@ defmodule BackendWeb.UserController do
   action_fallback BackendWeb.FallbackController
 
   alias BackendWeb.Plugs
-  plug Plugs.FrontendAuth
+  plug Plugs.UserAuth when action
+    in [:update, :delete]
 
   def index(conn, _params) do
     users = Users.list_users()

@@ -1,18 +1,7 @@
-import store, {load_frontend_auth} from "./store";
+import store from "./store";
 
 export const api_get = async path => {
-  await update_frontend_auth();
-
-  let auth = load_frontend_auth();
-
-  let options = {
-    method: "GET",
-    headers: {
-      "x-auth": auth.token
-    },
-  };
-
-  let text = await fetch("http://short-final-backend.tmuro17.xyz/api/v1" + path, options);
+  let text = await fetch("http://short-final-backend.tmuro17.xyz/api/v1" + path, {});
   let resp = await text.json();
 
   return resp.data;
@@ -49,30 +38,6 @@ export const api_login = (email, password) => {
           data: data.session,
         };
         console.log('setting session');
-        store.dispatch(action);
-        resolve('SUCCESS');
-      } else if (data.error) {
-        let action = {
-          type: "error/set",
-          data: data.error,
-        };
-        store.dispatch(action);
-        // handle this better in the future
-        reject(data.error);
-      }
-    });
-  });
-};
-
-export const update_frontend_auth = () => {
-  return new Promise((resolve, reject) => {
-    api_post("/frontend_auth", {}).then((data) => {
-      if (data.frontend_auth) {
-        let action = {
-          type: "frontend_auth/set",
-          data: data.frontend_auth,
-        };
-        console.log('setting frontend_auth');
         store.dispatch(action);
         resolve('SUCCESS');
       } else if (data.error) {
