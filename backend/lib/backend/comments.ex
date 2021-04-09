@@ -26,7 +26,7 @@ defmodule Backend.Comments do
     {idInt, ""} = Integer.parse(airport_id)
 
     {_, results} = Repo.query(
-      "select comments.body, u.name from comments join airports a ON comments.airport_id = a.id join users u ON comments.user_id = u.id where airport_id = $1 GROUP BY airport_id, comments.body, u.id;",
+      "select comments.body, u.name from comments join airports a ON comments.airport_id = a.id join users u ON comments.user_id = u.id where airport_id = $1 GROUP BY airport_id, comments.body, u.id, comments.updated_at ORDER BY comments.updated_at desc;",
       [idInt]
     )
     IO.puts("hi #{Kernel.inspect(results)}")
