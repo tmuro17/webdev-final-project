@@ -2,9 +2,10 @@ import {useEffect, useState} from "react";
 import {fetch_top_100_users} from "../api";
 
 const LeaderTable = ({users}) => {
-  let userRows = users.map((user) => {
+  let userRows = users.map((user, index) => {
     return (
-      <tr>
+      <tr className="border">
+        <td className="text-center">{index + 1}</td>
         <td className="text-center">{user.name}</td>
         <td className="text-center">{Math.round((user.win_loss + Number.EPSILON) * 100) / 100}</td>
       </tr>
@@ -16,8 +17,9 @@ const LeaderTable = ({users}) => {
     <table className="2xl:table-fixed">
       <thead>
       <tr>
-        <th className="2xl:w-1/2">Name</th>
-        <th className="2xl:w-1/2">W/L %</th>
+        <th className="2xl:w-1/3">Rank</th>
+        <th className="2xl:w-1/3">Name</th>
+        <th className="2xl:w-1/3">W/L %</th>
       </tr>
       </thead>
       <tbody>
