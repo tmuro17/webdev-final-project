@@ -45,6 +45,7 @@ const AirportsStats = () => {
 
 
   useEffect(() => {
+    document.body.style.overflow = 'hidden';
     fetch_airports_easiest_25().then((airports) => setEasy25(airports));
   }, []);
 
@@ -58,8 +59,8 @@ const AirportsStats = () => {
 
   return (
     <div className="h-full">
-      <h1 className="text-xl font-bold">Airport Stats:</h1>
       <div className="flex space-x-1">
+        <h1 className="text-xl font-bold mr-2 w-1/3">Airport Stats:</h1>
         <input
           name="icaoSearch"
           id="icaoSearch"
