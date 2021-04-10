@@ -57,9 +57,8 @@ const AirportsStats = () => {
   };
 
   return (
-    <div>
+    <div className="h-full">
       <h1 className="text-xl font-bold">Airport Stats:</h1>
-      <br/>
       <div className="flex space-x-1">
         <input
           name="icaoSearch"
@@ -71,21 +70,23 @@ const AirportsStats = () => {
           placeholder="ICAO Code"
         />
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-4"
           onClick={search}
         >
           Search
         </button>
+        <div className="ml-4 p-2">
+          <h3>Click a row to view airport details.</h3>
+        </div>
+        
       </div>
       <br/>
-      <h3>Click a row to view airport details.</h3>
-      <br/>
       <div className="w-full flex flex-row">
-        <div className="w-1/2 h-1/3 flex flex-col overflow-auto mr-4">
+        <div className="w-1/2 h-1/3">
           <h2 className="text-lg font-bold">25 Hardest:</h2>
           <AirportTable airports={hard25}/>
         </div>
-        <div className="w-1/2 h-1/3 flex flex-col overflow-auto">
+        <div className="w-1/2 h-1/3">
           <h2 className="text-lg font-bold">25 Easiest:</h2>
           <AirportTable airports={easy25}/>
         </div>
