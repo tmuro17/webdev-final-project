@@ -1,3 +1,7 @@
+// this workflow was used from
+// https://medium.com/software-fast-radius/wiring-up-phoenix-channels-with-react-hooks-921aac29f0ff
+// as a way to better componentize the socket for wrapping various react components
+
 import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Socket } from 'phoenix';

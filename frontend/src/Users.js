@@ -20,8 +20,6 @@ const Field = ({user, setUser, field}) => {
 const UserForm = ({user, setUser}) => {
   const onSubmit = ev => {
     ev.preventDefault();
-    console.log(ev);
-    console.log(user);
   };
 
   return (

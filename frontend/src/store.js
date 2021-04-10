@@ -64,7 +64,6 @@ const error = (state = null, action) => {
 };
 
 const root_reducer = (state, action) => {
-  console.log("root_reducer", state, action);
   let reducer = combineReducers({
     users, user_form, session, error
   });

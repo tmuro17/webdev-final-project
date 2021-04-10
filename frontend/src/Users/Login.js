@@ -30,13 +30,11 @@ function Login() {
   const handleLogin = ev => {
     ev.preventDefault();
     if (validPassword()) {
-      console.log('logging in')
       api_login(email, pass).then(res => {
         // go back to home for now
         history.push("/")
       })
       .catch(err => {
-        console.log('erroring!')
         setErr(err);
       })
     }

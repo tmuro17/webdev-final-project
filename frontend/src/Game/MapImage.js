@@ -36,8 +36,7 @@ function MapImage({coordinates}) {
   }, [])
 
   const onResize = React.useCallback(function callback(map) {
-    // cant get this to work
-    console.log('resizing')
+    
   }, [])
 
   return isLoaded ? (

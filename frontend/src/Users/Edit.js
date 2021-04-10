@@ -21,7 +21,6 @@ const EditUser = ({session}) => {
 
   const updateUser = ev => {
     ev.preventDefault();
-    console.log('updating user');
     api_update_user({
       id: user_id,
       name: name,

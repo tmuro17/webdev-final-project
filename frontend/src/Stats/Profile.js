@@ -11,7 +11,7 @@ const gotoAirport = (icao, history) => {
 const AirportWinLosses = ({details}) => {
   let history = useHistory();
   let detailRows = details.map((detail, index) => {
-    console.log(detail);
+
     return (
       <tr key={index} onClick={e => gotoAirport(detail.icao, history)} className="border hover:bg-darkwhite hover:text-black cursor-pointer">
         <td className="text-center">{detail.airport_name}</td>
@@ -51,7 +51,6 @@ const Profile = ({session}) => {
 
   useEffect(() => {
     fetch_user(user_id).then((u) => setUser(u));
-    console.log(user)
     document.body.style.overflow = 'hidden';
   }, [user_id]);
 

@@ -23,8 +23,6 @@ const Register = () => {
 
   const handleRegister = ev => {
     ev.preventDefault();
-    console.log(ev);
-    console.log(user);
 
     let data = pick(user, ['name', 'email', 'password']);
     create_user(data).then(() => {

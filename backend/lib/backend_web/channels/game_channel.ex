@@ -17,7 +17,6 @@ defmodule BackendWeb.GameChannel do
   end
 
   def handle_in("user_location", %{"user_id" => user_id, "coordinates" => coordinates, "regional" => regional}, socket) do
-    IO.puts("regionality: #{regional}")
     user = Users.get_user!(user_id)
     airports =
       case regional do
@@ -25,7 +24,6 @@ defmodule BackendWeb.GameChannel do
           ApiAgent.get_airports_in_radius(coordinates, 500)
           |> Enum.shuffle
         false ->
-          IO.puts("worked")
           # get top 25 hardest airports
           Stats.game_airports_hardest_25()
       end
@@ -46,7 +44,6 @@ defmodule BackendWeb.GameChannel do
         true ->
           [correct | rest] = airports
           options = Enum.take(airports, 4)
-          IO.puts("hi #{Kernel.inspect(correct)}")
           # insert in db if it isnt already
           if Airports.get_airport_by_icao(correct[:icao]) == nil do
             Airports.create_airport(%{
@@ -57,7 +54,6 @@ defmodule BackendWeb.GameChannel do
             })
           end
 
-          IO.puts("xx: #{Kernel.inspect(Airports.get_airport_by_icao(correct[:icao]))}")
           round = %{options: Enum.shuffle(options), map_coords: correct[:coordinates]}
           push(socket, "incoming_question", round)
 
@@ -87,8 +83,6 @@ defmodule BackendWeb.GameChannel do
   def handle_in("new_guess", %{"guess" => guess}, socket) do
     user = socket.assigns[:user]
     correct = socket.assigns[:correct_answer]
-
-    IO.puts("user guessed: #{guess}, correct: #{correct}")
 
     outcome = correct == guess
 

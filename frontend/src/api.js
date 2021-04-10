@@ -38,7 +38,6 @@ export const api_login = (email, password) => {
           type: "session/set",
           data: data.session,
         };
-        console.log('setting session');
         store.dispatch(action);
         resolve('SUCCESS');
       } else if (data.error) {

@@ -29,7 +29,6 @@ defmodule Backend.Comments do
       "select comments.body, u.name from comments join airports a ON comments.airport_id = a.id join users u ON comments.user_id = u.id where airport_id = $1 GROUP BY airport_id, comments.body, u.id, comments.updated_at ORDER BY comments.updated_at desc;",
       [finalId]
     )
-    IO.puts("hi #{Kernel.inspect(results)}")
 
     Enum.map(results.rows,
     fn r -> %{body: r |> hd, username: r |> tl |> hd} end)
