@@ -1,0 +1,24 @@
+---
+services:
+  database:
+    image: postgres:latest
+    hostname: database
+    environment:
+      - POSTGRES_PASSWORD=final_postgres
+    restart: unless-stopped
+  backend:
+    image: short-final-elixir-backend
+    hostname: backend
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    depends_on:
+      - database
+  frontend:
+    image: short-final-elixir-frontend
+    hostname: frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend

@@ -1,0 +1,5 @@
+_default:
+    @just --list
+
+build:
+  docker build -t short-final-elixir-backend .

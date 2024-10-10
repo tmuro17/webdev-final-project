@@ -5,8 +5,8 @@ config :backend_final, Backend.Repo,
   username: "postgres",
   password: "final_postgres",
   database: "backend_dev",
-  hostname: "localhost",
-  port: 4855,
+  hostname: "database",
+  port: 5432,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

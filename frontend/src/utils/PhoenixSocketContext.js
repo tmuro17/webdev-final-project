@@ -12,7 +12,7 @@ const PhoenixSocketProvider = ({ children }) => {
   const [socket, setSocket] = useState();
 
   useEffect(() => {
-    const socket = new Socket('wss://short-final-backend.tmuro17.xyz/socket');
+    const socket = new Socket('ws://localhost:4000/socket');
     socket.connect();
     setSocket(socket);
   }, []);
